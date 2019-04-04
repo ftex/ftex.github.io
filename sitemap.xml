@@ -3,17 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>http://ifalone.github.io/post/first/</loc>
-      
-      <lastmod>2019-04-02T16:40:39+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>http://ifalone.github.io/about/</loc>
+      <loc>http://ftex.github.io/about/</loc>
       
       <lastmod>2019-04-02T16:39:18+08:00</lastmod>
       
@@ -23,9 +13,19 @@
     </url>
   
     <url>
-      <loc>http://ifalone.github.io/categories/actor/</loc>
+      <loc>http://ftex.github.io/post/first/</loc>
       
-      <lastmod>2019-04-02T16:40:39+08:00</lastmod>
+      <lastmod>2018-09-02T16:40:39+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://ftex.github.io/categories/actor/</loc>
+      
+      <lastmod>2018-09-02T16:40:39+08:00</lastmod>
       
       
       
@@ -35,21 +35,9 @@
     </url>
   
     <url>
-      <loc>http://ifalone.github.io/categories/</loc>
+      <loc>http://ftex.github.io/categories/</loc>
       
-      <lastmod>2019-04-02T16:40:39+08:00</lastmod>
-      
-      
-      
-      <priority>0</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>http://ifalone.github.io/post/</loc>
-      
-      <lastmod>2019-04-02T16:40:39+08:00</lastmod>
+      <lastmod>2018-09-02T16:40:39+08:00</lastmod>
       
       
       
@@ -59,7 +47,9 @@
     </url>
   
     <url>
-      <loc>http://ifalone.github.io/tags/</loc>
+      <loc>http://ftex.github.io/post/</loc>
+      
+      <lastmod>2018-09-02T16:40:39+08:00</lastmod>
       
       
       
@@ -69,9 +59,7 @@
     </url>
   
     <url>
-      <loc>http://ifalone.github.io/tags/java/</loc>
-      
-      <lastmod>2019-04-02T16:40:39+08:00</lastmod>
+      <loc>http://ftex.github.io/tags/</loc>
       
       
       
@@ -81,9 +69,9 @@
     </url>
   
     <url>
-      <loc>http://ifalone.github.io/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B/</loc>
+      <loc>http://ftex.github.io/tags/java/</loc>
       
-      <lastmod>2019-04-02T16:40:39+08:00</lastmod>
+      <lastmod>2018-09-02T16:40:39+08:00</lastmod>
       
       
       
@@ -93,9 +81,21 @@
     </url>
   
     <url>
-      <loc>http://ifalone.github.io/</loc>
+      <loc>http://ftex.github.io/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B/</loc>
       
-      <lastmod>2019-04-02T16:40:39+08:00</lastmod>
+      <lastmod>2018-09-02T16:40:39+08:00</lastmod>
+      
+      
+      
+      <priority>0</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://ftex.github.io/</loc>
+      
+      <lastmod>2019-04-02T16:39:18+08:00</lastmod>
       
       
       

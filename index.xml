@@ -2,24 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>飞雷神 on 飞雷神</title>
-    <link>http://ifalone.github.io/</link>
+    <link>http://ftex.github.io/</link>
     <description>Recent content in 飞雷神 on 飞雷神</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Apr 2019 16:40:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Apr 2019 16:39:18 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>First</title>
-      <link>http://ifalone.github.io/post/first/</link>
-      <pubDate>Tue, 02 Apr 2019 16:40:39 +0800</pubDate>
+      <title>About</title>
+      <link>http://ftex.github.io/about/</link>
+      <pubDate>Tue, 02 Apr 2019 16:39:18 +0800</pubDate>
       
-      <guid>http://ifalone.github.io/post/first/</guid>
+      <guid>http://ftex.github.io/about/</guid>
       <description>
 
-&lt;h3 id=&#34;hello-hugo&#34;&gt;hello hugo&lt;/h3&gt;
+&lt;h2 id=&#34;这是一篇个人介绍页面&#34;&gt;这是一篇个人介绍页面&lt;/h2&gt;
 
-&lt;p&gt;第一篇文章&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;希望看到的人点赞&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>First</title>
+      <link>http://ftex.github.io/post/first/</link>
+      <pubDate>Sun, 02 Sep 2018 16:40:39 +0800</pubDate>
+      
+      <guid>http://ftex.github.io/post/first/</guid>
+      <description>
+
+&lt;h2 id=&#34;hello-hugo&#34;&gt;hello hugo&lt;/h2&gt;
+
+&lt;h2 id=&#34;第一篇文章&#34;&gt;第一篇文章&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
 public class BSearch {
@@ -75,7 +91,7 @@ public class BSearch {
 
 &lt;h3 id=&#34;akka-实现了独特的混合模型&#34;&gt;Akka 实现了独特的混合模型&lt;/h3&gt;
 
-&lt;p&gt;Actors&lt;/p&gt;
+&lt;h4 id=&#34;actors&#34;&gt;Actors&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;对并发/并行程序的简单的、高级别的抽象；&lt;/li&gt;
@@ -83,40 +99,24 @@ public class BSearch {
 &lt;li&gt;非常轻量的事件驱动处理（1G内存可容纳数百万个actors）；&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;容错性&lt;/p&gt;
+&lt;h4 id=&#34;容错性&#34;&gt;容错性&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;使用“let-it-crash”语义的监控层次体系；&lt;/li&gt;
-&lt;li&gt;监控层次体系可以跨越多个JVM，从而提供真正的容错系统；&lt;/li&gt;
+&lt;li&gt;监控层次&lt;a href=&#34;http://www.baidu.com&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;体系&lt;/a&gt;可以跨越多个JVM，从而提供真正的容错系统；&lt;/li&gt;
 &lt;li&gt;非常适合编写永不停机、自愈合的高容错系统；&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;位置透明性&lt;/p&gt;
+&lt;h4 id=&#34;位置透明性&#34;&gt;位置透明性&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Akka的所有元素都为分布式环境而设计：所有actor只通过发送消息进行交互，所有操作都是异步的。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;持久性&lt;/p&gt;
+&lt;h4 id=&#34;持久性&#34;&gt;持久性&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Actor接收到的消息可以选择性的被持久化，并在actor启动或重启的时候重放。这使得actor能够恢复其状态，即使是在JVM崩溃或正在迁移到另外节点的情况下。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>http://ifalone.github.io/about/</link>
-      <pubDate>Tue, 02 Apr 2019 16:39:18 +0800</pubDate>
-      
-      <guid>http://ifalone.github.io/about/</guid>
-      <description>
-
-&lt;h2 id=&#34;这是一篇个人介绍页面&#34;&gt;这是一篇个人介绍页面&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;希望看到的人点赞&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

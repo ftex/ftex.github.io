@@ -63,4 +63,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: http://ifalone.github.io/sitemap.xml
+Sitemap: http://ftex.github.io/sitemap.xml
