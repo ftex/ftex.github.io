@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="j.c">
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://ifalone.github.io/post/first/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           First | 飞雷神
+       
+  </title>
+  <meta name="title" content="First | 飞雷神">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http://ifalone.github.io/"
+    },
+    "articleSection" : "post",
+    "name" : "First",
+    "headline" : "First",
+    "description" : "hello hugo 第一篇文章
+public class BSearch { public static int searchIndex(int[] a, int begin, int end, int value) { if (begin &gt; end) return -1; int middlePoint = begin + (end - begin) / 2; if (a[middlePoint] == value) { return middlePoint; } else if (a[middlePoint] &gt; value) { return searchIndex(a, begin, middlePoint - 1, value); } else { return searchIndex(a, middlePoint + 1, end, value); } } /** * 查找数组中第一个出现的value * * @param a * @param value * @return */ public static int bsearch2(int[] a, int begin, int end, int value) { if (begin &gt; end) return -1; int mid = begin + (end - begin) / 2; if (a[mid] &gt; value) { return bsearch2(a, begin, mid - 1, value); } else if (a[mid] &lt; value) { return bsearch2(a, mid + 1, end, value); } else { if (mid == 0 || a[mid - 1] !",
+    "inLanguage" : "en-us",
+    "author" : "j.c",
+    "creator" : "j.c",
+    "publisher": "j.c",
+    "accountablePerson" : "j.c",
+    "copyrightHolder" : "j.c",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-04-02 16:40:39 &#43;0800 CST",
+    "dateModified" : "2019-04-02 16:40:39 &#43;0800 CST",
+    "url" : "http://ifalone.github.io/post/first/",
+    "wordCount" : "210",
+    "keywords" : [ "java","并发编程模型", "飞雷神"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://ifalone.github.io/">飞雷神</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/post/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://ifalone.github.io/">飞雷神</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/post/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">First</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="http://ifalone.github.io/" rel="author">j.c</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-04-02 itemprop="datePublished">April 2, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="http://ifalone.github.io/categories/actor/"> Actor </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h3 id="hello-hugo">hello hugo</h3>
+
+<p>第一篇文章</p>
+
+<pre><code class="language-java">
+public class BSearch {
+
+    public static int searchIndex(int[] a, int begin, int end, int value) {
+        if (begin &gt; end) return -1;
+        int middlePoint = begin + (end - begin) / 2;
+        if (a[middlePoint] == value) {
+            return middlePoint;
+        } else if (a[middlePoint] &gt; value) {
+            return searchIndex(a, begin, middlePoint - 1, value);
+        } else {
+            return searchIndex(a, middlePoint + 1, end, value);
+        }
+    }
+
+    /**
+     * 查找数组中第一个出现的value
+     *
+     * @param a
+     * @param value
+     * @return
+     */
+    public static int bsearch2(int[] a, int begin, int end, int value) {
+        if (begin &gt; end) return -1;
+        int mid = begin + (end - begin) / 2;
+        if (a[mid] &gt; value) {
+            return bsearch2(a, begin, mid - 1, value);
+        } else if (a[mid] &lt; value) {
+            return bsearch2(a, mid + 1, end, value);
+        } else {
+            if (mid == 0 || a[mid - 1] != value) return mid;
+            return bsearch2(a, begin, mid - 1, value);
+        }
+    }
+
+
+    public static void main(String[] args) {
+//        int [] a = {1,2,3,4,5,6,7,8};
+//        System.out.println(searchIndex(a,0,a.length-1,8));
+        int[] a = {1, 6, 8, 8, 8, 8, 8};
+        System.out.println(bsearch2(a, 0, a.length - 1, 8));
+    }
+}
+
+</code></pre>
+
+<p>Akka支持可扩展的实时事务处理。我们相信编写出正确的、具有容错性和可扩展性的并发程序太困难了。这多数是因为使用了错误的工具和错误的抽象级别。Akka就是为了改变这种状况而生的。通过使用Actor模型提升了抽象级别，为构建可扩展的、有弹性的响应式并发应用提供了一个更好的平台，详见响应式宣言。在容错性方面Akka采用了“let it crash”（让它崩溃）模型，该模型已经在电信行业构建出“自愈合”的应用和永不停机的系统，取得了巨大成功。Actor还为透明的分布式系统以及真正的可扩展高容错应用的基础进行了抽象。</p>
+
+<p>一个Actor是一个容器，它包含了状态，行为，一个邮箱，子Actor和一个监管策略。所有这些封装在一个Actor引用里。最终在Actor终止时，会有这些发生。</p>
+
+<p>Actor使你能够进行服务失败管理（监控），负载管理（缓和策略、超时和处理隔离），以及水平和垂直方向上的可扩展性（增加cpu核数和/或增加更多的机器）管理。</p>
+
+<h3 id="akka-实现了独特的混合模型">Akka 实现了独特的混合模型</h3>
+
+<p>Actors</p>
+
+<ul>
+<li>对并发/并行程序的简单的、高级别的抽象；</li>
+<li>异步、非阻塞、高性能的事件驱动编程模型；</li>
+<li>非常轻量的事件驱动处理（1G内存可容纳数百万个actors）；</li>
+</ul>
+
+<p>容错性</p>
+
+<ul>
+<li>使用“let-it-crash”语义的监控层次体系；</li>
+<li>监控层次体系可以跨越多个JVM，从而提供真正的容错系统；</li>
+<li>非常适合编写永不停机、自愈合的高容错系统；</li>
+</ul>
+
+<p>位置透明性</p>
+
+<ul>
+<li>Akka的所有元素都为分布式环境而设计：所有actor只通过发送消息进行交互，所有操作都是异步的。</li>
+</ul>
+
+<p>持久性</p>
+
+<ul>
+<li>Actor接收到的消息可以选择性的被持久化，并在actor启动或重启的时候重放。这使得actor能够恢复其状态，即使是在JVM崩溃或正在迁移到另外节点的情况下。</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>j.c </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://ifalone.github.io/post/first/>http://ifalone.github.io/post/first/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="http://ifalone.github.io/tags/java/">
+                    #java</a></span>
+            
+            <span class="tag"><a href="http://ifalone.github.io/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B/">
+                    #并发编程模型</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://ifalone.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2010 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://ifalone.github.io/">j.c</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

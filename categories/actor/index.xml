@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Actor on 飞雷神</title>
+    <link>http://ifalone.github.io/categories/actor/</link>
+    <description>Recent content in Actor on 飞雷神</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Apr 2019 16:40:39 +0800</lastBuildDate>
+    
+	<atom:link href="http://ifalone.github.io/categories/actor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First</title>
+      <link>http://ifalone.github.io/post/first/</link>
+      <pubDate>Tue, 02 Apr 2019 16:40:39 +0800</pubDate>
+      
+      <guid>http://ifalone.github.io/post/first/</guid>
+      <description>hello hugo 第一篇文章
+public class BSearch { public static int searchIndex(int[] a, int begin, int end, int value) { if (begin &amp;gt; end) return -1; int middlePoint = begin + (end - begin) / 2; if (a[middlePoint] == value) { return middlePoint; } else if (a[middlePoint] &amp;gt; value) { return searchIndex(a, begin, middlePoint - 1, value); } else { return searchIndex(a, middlePoint + 1, end, value); } } /** * 查找数组中第一个出现的value * * @param a * @param value * @return */ public static int bsearch2(int[] a, int begin, int end, int value) { if (begin &amp;gt; end) return -1; int mid = begin + (end - begin) / 2; if (a[mid] &amp;gt; value) { return bsearch2(a, begin, mid - 1, value); } else if (a[mid] &amp;lt; value) { return bsearch2(a, mid + 1, end, value); } else { if (mid == 0 || a[mid - 1] !</description>
+    </item>
+    
+  </channel>
+</rss>
