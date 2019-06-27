@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>飞雷神 on 飞雷神</title>
@@ -117,6 +116,709 @@ public class BSearch {
 
 &lt;ul&gt;
 &lt;li&gt;Actor接收到的消息可以选择性的被持久化，并在actor启动或重启的时候重放。这使得actor能够恢复其状态，即使是在JVM崩溃或正在迁移到另外节点的情况下。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://ftex.github.io/java_review/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://ftex.github.io/java_review/</guid>
+      <description>
+
+&lt;h3 id=&#34;多线程&#34;&gt;多线程&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;strong&gt;文章&lt;/strong&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://juejin.im/post/5b57b81af265da0f4b7a9ae5&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://juejin.im/post/5b57b81af265da0f4b7a9ae5&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/SEU_Calvin/article/details/52411531&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/SEU_Calvin/article/details/52411531&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://ifeve.com/15-java-faq/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://ifeve.com/15-java-faq/&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://zhuanlan.zhihu.com/p/34678757&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/34678757&lt;/a&gt;  （讲解的比较详细）&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java内存模型&lt;/strong&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/suifeng3051/article/details/52611310&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/suifeng3051/article/details/52611310&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Thread方法的使用&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;conncurrentHashmap的实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;j.u.c下列类的实现，AQS&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/javazejian/article/details/72828483&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/javazejian/article/details/72828483&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/chenssy/article/details/54883355&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/chenssy/article/details/54883355&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java 线程池实现，拒绝策略&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;写一个死锁&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;现实工作中什么场景使用过多线程？简单介绍一个线程池&lt;/strong&gt;
+newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;什么是守护线程，守护线程和非守护线程的区别以及用法&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;synchronized和volatile的作用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. volatile关键字的作用
+&lt;br/&gt; 其实volatile关键字的作用就是保证了可见性和有序性（不保证原子性），如果一个共享变量被volatile关键字修饰，那么如果一个线程修改了这个共享变量后，其他线程是立马可知的。为什么是这样的呢？比如，线程A修改了自己的共享变量副本，这时如果该共享变量没有被volatile修饰，那么本次修改不一定会马上将修改结果刷新到主存中，如果此时B去主存中读取共享变量的值，那么这个值就是没有被A修改之前的值。如果该共享变量被volatile修饰了，那么本次修改结果会强制立刻刷新到主存中，如果此时B去主存中读取共享变量的值，那么这个值就是被A修改之后的值了。
+volatile能禁止指令重新排序，在指令重排序优化时，在volatile变量之前的指令不能在volatile之后执行，在volatile之后的指令也不能在volatile之前执行，所以它保证了有序性。&lt;/li&gt;
+&lt;li&gt;2. synchronized关键字的作用
+&lt;br/&gt; synchronized提供了同步锁的概念，被synchronized修饰的代码段可以防止被多个线程同时执行，必须一个线程把synchronized修饰的代码段都执行完毕了，其他的线程才能开始执行这段代码。
+因为synchronized保证了在同一时刻，只能有一个线程执行同步代码块，所以执行同步代码块的时候相当于是单线程操作了，那么线程的可见性、原子性、有序性（线程之间的执行顺序）它都能保证了。&lt;/li&gt;
+&lt;li&gt;3. volatile关键字和synchronized关键字的区别
+
+&lt;ul&gt;
+&lt;li&gt;volatile只能作用于变量，使用范围较小。synchronized可以用在变量、方法、类、同步代码块等，使用范围比较广。&lt;/li&gt;
+&lt;li&gt;volatile只能保证可见性和有序性，不能保证原子性。而可见性、有序性、原子性synchronized都可以包证。&lt;/li&gt;
+&lt;li&gt;volatile不会造成线程阻塞。synchronized可能会造成线程阻塞。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;线程安全&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; ArrayList和Vector有什么区别?&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; HashMap和HashTable有什么区别?&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; StringBuilder和StringBuffer有什么区别?&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这些都是Java面试中常见的基础问题。面对这样的问题，回答是：ArrayList是非线程安全的，Vector是线程安全的；HashMap是非线程安全的，HashTable是线程安全的；StringBuilder是非线程安全的，StringBuffer是线程安全的。&lt;/p&gt;
+
+&lt;p&gt;此时如果继续问：什么是线程安全？线程安全和非线程安全有什么区别？分别在什么情况下使用？&lt;/p&gt;
+
+&lt;p&gt;线程安全：
+当多个线程类并发操作某类的某个方法，(在该方法内部)来修改这个类的某个成员变量的值，不会出错，则我们就说，该的这个方法是线程安全的。&lt;/p&gt;
+
+&lt;p&gt;某类的某方法是否线程安全的关键是：
+ - 该方法是否修改该类的成员变量;
+ - 是否给该方法加锁(是否用synchronized关键字修饰）。
+线程不安全：
+ &lt;br/&gt; 当多个线程类并发操作某类的某个方法，(在该方法内部)来修改这个类的某个成员变量的值，很容易就会发生错误，故我们就说，这个方法是线程不安全的。如果要把这个方法变成线程安全的，则用 synchronized关键字来修饰该方法即可。&lt;/p&gt;
+
+&lt;p&gt;总结：若多个线程同时修改某个外部传来的对象的成员变量，很容易就会出现错误，我们称之为线程不安全。(该类的这个方法是线程不安全的。若要线程安全，用synchronized关键字修饰即可)。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;jvm&#34;&gt;JVM&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 逃逸分析&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;文章：
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/jisuanjiguoba/article/details/80176223&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/jisuanjiguoba/article/details/80176223&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://www.cnblogs.com/zhguang/p/Java-JVM-GC.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.cnblogs.com/zhguang/p/Java-JVM-GC.html&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/aoxida/article/details/45061571&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/aoxida/article/details/45061571&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/zp357252539/article/details/52197708&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/zp357252539/article/details/52197708&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; java内存管理参考资料：
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.importnew.com/21463.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.importnew.com/21463.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://www.cnblogs.com/gw811/archive/2012/10/18/2730117.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.cnblogs.com/gw811/archive/2012/10/18/2730117.html&lt;/a&gt; (java内存管理)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&lt;/a&gt; (java内存管理机制
+)&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; java堆和栈
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/emira_j/article/details/51232611&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/emira_j/article/details/51232611&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://www.cnblogs.com/whgw/archive/2011/09/29/2194997.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.cnblogs.com/whgw/archive/2011/09/29/2194997.html&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 垃圾回收机制&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 简单介绍下JVM各种参数及调优&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;数据结构和基础知识&#34;&gt;数据结构和基础知识&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized和volatile的作用&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;StringBuilder 和 StringBuffer 的区别是什么？什么时候该用 + 来拼接字符串？什么时候该用StringBuilder ？什么时候该用 StringBuffer ？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder &amp;gt; StringBuffer &amp;gt; String。String最慢的原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。&lt;/li&gt;
+&lt;li&gt;再来说线程安全，在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的
+如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。一般单线程操作中，可以在一行代码中拼接完的字符串操作，都用 + 操作符就可以了，因为 + 操作符默认会使用 StringBuilder 来拼接；如果单线程操作中，拼接字符串需要使用循环，那么直接使用 StringBuilder 比较合适；如果在拼接字符串的操作处于多线程环境中，需要使用 StringBuffer 来操作。
+
+&lt;ul&gt;
+&lt;li&gt;String：适用于少量的字符串操作的情况；&lt;/li&gt;
+&lt;li&gt;StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况；&lt;/li&gt;
+&lt;li&gt;StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况；&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/a/1190000007099818&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://segmentfault.com/a/1190000007099818&lt;/a&gt;
+&lt;a href=&#34;https://www.cnblogs.com/shanheyongmu/p/9583381.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://www.cnblogs.com/shanheyongmu/p/9583381.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;如果碰到多重循环需要跳出该如何操作？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;可以使用循环标签，即在循环关键字前加上一个标签名及冒号，在需要跳出的地方（ break ${labelName} 或 continue ${labelName} ）进行跳出。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;HashMap的实现原理&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 利用key的hashCode重新hash计算出当前对象的元素在数组中的下标&lt;/li&gt;
+&lt;li&gt;2. 存储时，如果出现hash值相同的key，此时有两种情况。(1)如果key相同，则覆盖原始值；(2)如果key不同（出现冲突），则将当前的key-value放入链表中&lt;/li&gt;
+&lt;li&gt;3. 获取时，直接找到hash值对应的下标，在进一步判断key是否相同，从而找到对应值。&lt;/li&gt;
+&lt;li&gt;4. 理解了以上过程就不难明白HashMap是如何解决hash冲突的问题，核心就是使用了数组的存储方式，然后将冲突的key的对象放入链表中，一旦发现冲突就在链表中做进一步的对比。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;HashMap与HashTable的区别？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. HashMap是非线程安全的，HashTable是线程安全的。&lt;/li&gt;
+&lt;li&gt;2. HashMap的键和值都允许有null值存在，而HashTable则不行。 3、因为线程安全的问题，HashMap效率比HashTable的要高。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;进程和线程的区别与联系？&lt;/strong&gt;
+&lt;br/&gt; 进程：每个进程都有独立的代码和数据空间（进程上下文），进程间的切换会有较大的开销，一个进程包含1–n个线程。
+线程：同一类线程共享代码和数据空间，每个线程有独立的运行栈和程序计数器(PC)，线程切换开销小。
+&lt;br/&gt; 线程和进程一样分为五个阶段：创建、就绪、运行、阻塞、终止。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;在java中要想实现多线程，有几种方法？&lt;/strong&gt;
+&lt;br/&gt; 一种是继续Thread类，另外一种是实现Runable接口，还有就是实现Callable接口。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;switch能否用string做参数？&lt;/strong&gt;
+&lt;br/&gt; 在 Java 7 之前, switch 只能支持byte,short,char,int 或者其对应的封装类以及 Enum 类型。在Java 7中,String 支持被加上了。
+Java7编译器进行了优化，String比较的原理是先使用hashCode判断，再通过equals判断值是否相等。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;Object有哪些公用方法？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 方法equals测试的是两个对象是否相等&lt;/li&gt;
+&lt;li&gt;2. 方法clone进行对象拷贝&lt;/li&gt;
+&lt;li&gt;3. 方法getClass返回和当前对象相关的Class对象&lt;/li&gt;
+&lt;li&gt;4. 方法notify,notifyall,wait都是用来对给定对象进行线程同步的&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;Java的四种引用以及应用场景？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;强引用&lt;/strong&gt;：如果一个对象具有强引用，它就不会被垃圾回收器回收。即使当前内存空间不足，JVM也不会回收它，而是抛出 OutOfMemoryError 错误，使程序异常终止。如果想中断强引用和某个对象之间的关联，可以显式地将引用赋值为null，这样一来的话，JVM在合适的时间就会回收该对象。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;软引用&lt;/strong&gt;：在使用软引用时，如果内存的空间足够，软引用就能继续被使用，而不会被垃圾回收器回收，只有在内存不足时，软引用才会被垃圾回收器回收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;弱引用&lt;/strong&gt;：具有弱引用的对象拥有的生命周期更短暂。因为当 JVM 进行垃圾回收，一旦发现弱引用对象，无论当前内存空间是否充足，都会将弱引用回收。不过由于垃圾回收器是一个优先级较低的线程，所以并不一定能迅速发现弱引用对象。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;虚引用&lt;/strong&gt;：顾名思义，就是形同虚设，如果一个对象仅持有虚引用，那么它相当于没有引用，在任何时候都可能被垃圾回收器回收。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;抽象类和接口的区别？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一个类只能继承单个类，但是可以实现多个接口&lt;/li&gt;
+&lt;li&gt;抽象类中可以有构造方法，接口中不能有构造方法&lt;/li&gt;
+&lt;li&gt;抽象类中的所有方法并不一定要是抽象的，你可以选择在抽象类中实现一些基本的方法。而接口要求所有的方法都必须是抽象的&lt;/li&gt;
+&lt;li&gt;抽象类中可以包含静态方法，接口中不可以&lt;/li&gt;
+&lt;li&gt;抽象类中可以有普通成员变量，接口中不可以&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;ThreadLocal&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用于保存某个线程共享变量：对于同一个static ThreadLocal，不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;ConcurrentHashmap的锁是如何加的？是不是分段越多越好?&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;concurrenhashmap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;并发队列ConcurrentLinkedQueue和阻塞队列LinkedBlockingQueue用法&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;读写锁&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;可重入的读写锁，可重入是如何实现的？&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;List，Map，Set接口，Collection接口差异&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;List,Set都是继承自Collection接口，Map则不是；&lt;/li&gt;
+&lt;li&gt;List特点：元素有放入顺序，元素可重复 ，Set特点：元素无放入顺序，元素不可重复，重复元素会覆盖掉，（注意：元素虽然无放入顺序，但是元素在set中的位置是有该元素的HashCode决定的，其位置其实是固定的，加入Set 的Object必须定义equals()方法 ，另外list支持for循环，也就是通过下标来遍历，也可以用迭代器，但是set只能用迭代，因为他无序，无法用下标来取得想要的值。）&lt;/li&gt;
+&lt;li&gt;Set和List对比：
+
+&lt;ul&gt;
+&lt;li&gt;Set：检索元素效率低下，删除和插入效率高，插入和删除不会引起元素位置改变。&lt;/li&gt;
+&lt;li&gt;List：和数组类似，List可以动态增长，查找元素效率高，插入删除元素效率低，因为会引起其他元素位置改变。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Map适合储存键值对的数据；&lt;/li&gt;
+&lt;li&gt;线程安全集合类与非线程安全集合类；
+
+&lt;ul&gt;
+&lt;li&gt;LinkedList、ArrayList、HashSet是非线程安全的，Vector是线程安全的;&lt;/li&gt;
+&lt;li&gt;HashMap是非线程安全的，HashTable是线程安全的;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;java序列化的作用和原理&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java序列化算法透析
+
+&lt;ul&gt;
+&lt;li&gt;Serialization（序列化）是一种将对象以一连串的字节描述的过程；反序列化deserialization是一种将这些字节重建成一个对象的过程。Java序列化API提供一种处理对象序列化的标准机制。在这里你能学到如何序列化一个对象，什么时候需要序列化以及Java序列化的算法，我们用一个实例来示范序列化以后的字节是如何描述一个对象的信息的。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;序列化的必要性
+
+&lt;ul&gt;
+&lt;li&gt;Java中，一切都是对象，在分布式环境中经常需要将Object从这一端网络或设备传递到另一端。这就需要有一种可以在两端传输数据的协议。Java序列化机制就是为了解决这个问题而产生。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;如何序列化一个对象&lt;/li&gt;
+&lt;li&gt;一个对象能够序列化的前提是实现Serializable接口，Serializable接口没有方法，更像是个标记。有了这个标记的Class就能被序列化机制处理。&lt;/li&gt;
+&lt;li&gt;为什么要用序列化&lt;/li&gt;
+&lt;li&gt;是因为在分布式的系统中有时候我们需要对象的传递，但是对象没有用中间件之类的配置，所以现在怎么把对象传递过去呢，我们能想到的就是把对象转成成字节存储到一个文件中，其中这个字节中既包括对象，也包括对象中存储的数据，也就是对象实例，当用的时候，在从这个文件中把存到硬盘中的字节流文件转成成对象。在这其中把对象和对象实例转化成字节流并存储到字节流文件中的过程就叫序列化，而从字节流文件中读取文件的过程就叫做反序列化。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;重写equals方法的时候为什么要重写hashcode方法？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如果申明一个对象作为map的key，那么map会比较key的hashCode()，和equals()方法 来确定是否存在这个key。2.如果根据 equals(Object) 方法，两个对象是相等的，那么对这两个对象中的每个对象调用hashCode 方法都必须生成相同的整数结果。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt; do {
+     if (e.hash == hash &amp;amp;&amp;amp; ((k = e.key) == key || (key != null &amp;amp;&amp;amp; key.equals(k)))) return e;
+  } while ((e = e.next) != null);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;分布式&#34;&gt;分布式&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 分布式事务、治理、一致性&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 服务限流、熔断&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 领域驱动设计的思想，只需要懂&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 分布式事务 二阶段提交&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;spring&#34;&gt;spring&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;1.Spring的注入bean的方式&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;2.SpringMVC运行原理？&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 客户端请求提交到DispatcherServlet；&lt;/li&gt;
+&lt;li&gt;2. 由DispatcherServlet控制器查询HandlerMapping，找到并分发到指定的Controller中；&lt;/li&gt;
+&lt;li&gt;3. Controller调用业务逻辑处理后，返回ModelAndView；&lt;/li&gt;
+&lt;li&gt;4. DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图；&lt;/li&gt;
+&lt;li&gt;5. 视图负责将结果显示到客户端。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;3.Spring IOC （控制反转，依赖注入）？&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spring支持三种依赖注入方式，分别是属性（Setter方法）注入，构造注入和接口注入。&lt;/li&gt;
+&lt;li&gt;Spring的IOC容器通过反射的机制实例化Bean并建立Bean之间的依赖关系。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;4.Spring Bean的作用域？&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Singleton：Spring IOC容器中只有一个共享的Bean实例，一般都是Singleton作用域。&lt;/li&gt;
+&lt;li&gt;Prototype：每一个请求，会产生一个新的Bean实例。&lt;/li&gt;
+&lt;li&gt;Request：每一次http请求会产生一个新的Bean实例。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Spring中 Bean生命周期&lt;/strong&gt;
+&lt;br/&gt; Spring IOC容器可以管理Bean的生命周期，允许在Bean生命周期的特定点执行定制的任务。
+Spring IOC容器对Bean的生命周期进行管理的过程如下：
+
+&lt;ul&gt;
+&lt;li&gt;1. 通过构造器或工厂方法创建Bean实例&lt;/li&gt;
+&lt;li&gt;2. 为Bean的属性设置值和对其它Bean的引用&lt;/li&gt;
+&lt;li&gt;3. 调用Bean的初始化方法&lt;/li&gt;
+&lt;li&gt;4. Bean可以使用了&lt;/li&gt;
+&lt;li&gt;5. 当容器关闭时，调用Bean的销毁方法&lt;/li&gt;
+&lt;li&gt;6. 在 Bean 的声明里设置 init-method 和 destroy-method 属性, 为 Bean 指定初始化和销毁方法。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;5.Spring的基本框架主要包含哪些模块？&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spring DAO：Spring提供了对JDBC的操作支持：JdbcTemplate模板工具类 。&lt;/li&gt;
+&lt;li&gt;Spring ORM：Spring可以与ORM框架整合。例如Spring整合Hibernate框架，其中Spring还提供HibernateDaoSupport工具类，简化了Hibernate的操作 。&lt;/li&gt;
+&lt;li&gt;Spring WEB：Spring提供了对Struts、Springmvc的支持，支持WEB开发。与此同时Spring自身也提供了基于MVC的解决方案 。&lt;/li&gt;
+&lt;li&gt;Spring AOP：Spring提供面向切面的编程，可以给某一层提供事务管理，例如在Service层添加事物控制 。&lt;/li&gt;
+&lt;li&gt;Spring JEE：J2EE开发规范的支持，例如EJB 。&lt;/li&gt;
+&lt;li&gt;Spring Core：提供IOC容器对象的创建和处理依赖对象关系 。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;6.Spring AOP？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JDK动态代理：调用者实际调用的则是代理类的方法，通过这种方式我们就可以在代理类中织入切面逻辑；&lt;/li&gt;
+&lt;li&gt;Cglib：通过为目标类动态生成一个子类，通过在子类中织入相应逻辑来达到织入代理逻辑的目的&lt;/li&gt;
+&lt;li&gt;AspectJ:静态织入，它有专门的编译器，在编译期间将Advice以字节码的形式织入到class文件中。&lt;/li&gt;
+&lt;li&gt;Spring AOP&lt;/li&gt;
+&lt;li&gt;切面（Aspect）：其实就是共有功能的实现。如日志切面、权限切面、事务切面等。在实际应用中通常是一个存放共有功能实现的普通Java类，之所以能被AOP容器识别成切面，是在配置中指定的。&lt;/li&gt;
+&lt;li&gt;通知（Advice）：是切面的具体实现。以目标方法为参照点，根据放置的地方不同，可分为前置通知（Before）、后置通知（AfterReturning）、异常通知（AfterThrowing）、最终通知（After）与环绕通知（Around）5种。在实际应用中通常是切面类中的一个方法，具体属于哪类通知，同样是在配置中指定的。&lt;/li&gt;
+&lt;li&gt;连接点（Joinpoint）：就是程序在运行过程中能够插入切面的地点。例如，方法调用、异常抛出或字段修改等，但Spring只支持方法级的连接点。&lt;/li&gt;
+&lt;li&gt;切入点（Pointcut）：用于定义通知应该切入到哪些连接点上。不同的通知通常需要切入到不同的连接点上，这种精准的匹配是由切入点的正则表达式来定义的。&lt;/li&gt;
+&lt;li&gt;目标对象（Target）：就是那些即将切入切面的对象，也就是那些被通知的对象。这些对象中已经只剩下干干净净的核心业务逻辑代码了，所有的共有功能代码等待AOP容器的切入。&lt;/li&gt;
+&lt;li&gt;代理对象（Proxy）：将通知应用到目标对象之后被动态创建的对象。可以简单地理解为，代理对象的功能等于目标对象的核心业务逻辑功能加上共有功能。代理对象对于使用者而言是透明的，是程序运行过程中的产物。&lt;/li&gt;
+&lt;li&gt;织入（Weaving）：将切面应用到目标对象从而创建一个新的代理对象的过程。这个过程可以发生在编译期、类装载期及运行期，当然不同的发生点有着不同的前提条件。譬如发生在编译期的话，就要求有一个支持这种AOP实现的特殊编译器；发生在类装载期，就要求有一个支持AOP实现的特殊类装载器；只有发生在运行期，则可直接通过Java语言的反射机制与动态代理机制来动态实现。
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;7.将一个请求url指向一个类的方法的注解是？&lt;/strong&gt;
+@RequestMapping&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;8.将前台的form中input控件的name属性绑定到控制器类中的方法参数的注解是？&lt;/strong&gt;
+@RequestParam&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;spring事务的实现&lt;/strong&gt;
+&lt;br/&gt; 可以进一步了解下事务的配置，例如7中事务传播行为随机选择一个作介绍&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;IOC实现机制&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;ApplicationContext 和 BeanFactory 的区别？&lt;/strong&gt;
+&lt;br/&gt; 创建 Bean 对象的时机不同：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BeanFactory 采取延迟加载，第一次调用 getBean() 方法时才会初始化 Bean。&lt;/li&gt;
+&lt;li&gt;ApplicationContext 是加载完 applicationContext.xml 时，就创建具体的 Bean 对象的实例。（只对 BeanDefition 中描述为是单例的 bean，才进行饿汉式加载）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;数据库&#34;&gt;数据库&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;读写分离何时强制要读主库，读哪个从库是通过什么方式决定的，从库的同步mysql用的什么方式；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;主从复制；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql的binlog&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql的存储引擎；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql引擎区别；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;myisam的优点，和innodb的区别&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;innodb对一行数据的读会枷锁吗？不枷锁，读实际读的是副本&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;myisam和innodb的区别（innodb是行级锁，myisam是表级锁）&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql的默认隔离级别，其他隔离级别；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;求表的size，或做数据统计可用什么存储引擎；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;读多写少可用什么引擎；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;假如要统计多个表应该用什么引擎；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;select xx from xx where xx and xx order by xx limit xx； 如何优化这个（看explain）；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;左连接和右连接&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;sql语句各种条件的执行顺序，如select， where， order by， group by&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql的行级锁加在哪个位置；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;行锁、表锁、列锁&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;乐观锁、悲观锁&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql其他的性能优化方式；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql是如何实现事务的；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;事务隔离级别；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;select、update&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;简单说一说drop、delete与truncate的区别？&lt;/strong&gt;
+delete和truncate只删除表的数据不删除表的结构
+速度,一般来说: drop&amp;gt; truncate &amp;gt;delete 
+delete语句是dml,这个操作会放到rollback segement中,事务提交之后才生效; 如果有相应的trigger,执行的时候将被触发. truncate,drop是ddl, 操作立即生效,原数据不放到rollback segment中,不能回滚. 操作不触发trigger.&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;索引是什么？什么作用？优缺点？&lt;/strong&gt;
+索引是对数据库表中一或多个列的值进行排序的结构，是帮助MySQL高效获取数据的数据结构。
+普通索引、唯一索引、主键索引、全文索引。&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;数据库事务是什么？&lt;/strong&gt;
+事务（Transaction）是并发控制的基本单位。所谓的事务，它是一个操作序列，这些操作要么都执行，要么都不执行，它是一个不可分割的工作单位。事务是数据库维护数据一致性的单位，在每个事务结束时，都能保持数据一致性。
+ACID：即原子性、一致性、隔离线和持久性。&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;HBase和mysql的区别。&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;HBase基于列存储，查询中的选中规则是通过列来定义，因此整个数据库是自动索引化的。HBase无需考虑分库、分表，它可以对存储的数据自动切分数据，并支持高并发读写操作，使得海量数据存储自动具有更强的扩展性。但是HBase不包含事务，没有表与表之间关联查询，
+mysql基于行存储，mysql的innodb引擎带事务控制，表之间的join比较方便；伸缩性比较差。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql如何自己实现读写分离？&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;cobar, Amoeba原理&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;如何在应用层实现mysql读写分离？&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt; 这个就是平时用到的，所以说的比较详细：
+  总的来说，在进入Service之前，使用AOP来做出判断，是使用写库还是读库，判断依据可以根据方法名判断，比如说以query、find、get等开头的就走读库，其他的走写库。
+  （1）写一个DynamicDataSource类 继承Spring的AbstractRoutingDataSource,只要实现determineCurrentLookupKey方法即可。
+  （2）再写一个类DynamicDataSourceHolder,使用ThreadLocal技术来记录当前线程中的数据源的key；
+  （3）订阅数据源的AOP切面，通过Service的方法名判断是应该走读库还是写库；
+  （4）Spring的配置文件中配置数据源DataSource为自定义的DynamicDataSource，定义连接池，配置jdbc.properties；
+  （5）配置事务管理以及动态切换数据源切面。
+- **分库分表时的一致性hash算法？**
+  对节点和数据，都做一个哈希运算，然后比较节点和数据的哈希值，数据取和节点最相近的节点作为存放节点。这样就保证当节点增加或者减少的时候，影响的数据最少。
+  一种简单的办法，给每个真实结点后面根据虚拟节点加上后缀再取Hash值，比如&amp;quot;192.168.0.0:111&amp;quot;就把它变成&amp;quot;192.168.0.0:111&amp;amp;&amp;amp;VN0&amp;quot;到&amp;quot;192.168.0.0:111&amp;amp;&amp;amp;VN4&amp;quot;，VN就是Virtual Node的缩写，还原的时候只需要从头截取字符串到&amp;quot;&amp;amp;&amp;amp;&amp;quot;的位置就可以了。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;mybatis&#34;&gt;mybatis&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mybatis如何映射表结构&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;Mybatis缓存机制？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一级缓存（默认）是SqlSession级别的缓存，它的作用域是SqlSession，在同一个SqlSession执行相同的SQL语句，第一次执行后会将结果集写到缓存中，第二次就会从缓存里获取。&lt;/li&gt;
+&lt;li&gt;二级缓存（默认不开启，需要手动在xml文件中配置），作用域是namespace。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;MyBatis的#号和$符号传参数的区别，$符号这种方式存在的意义，什么场景是一定要用$符号解决的？$和#可以同时用吗？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#&lt;/code&gt;将传入的数据都当成一个字符串，会对自动传入的数据加一个双引号。如：order by #user_id#，如果传入的值是111,那么解析成sql时的值为order by &amp;ldquo;111&amp;rdquo;, 如果传入的值是id，则解析成的sql为order by &amp;ldquo;id&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;将传入的数据直接显示生成在sql中。如：order by $user_id$，如果传入的值是111,那么解析成sql时的值为order by user_id, 如果传入的值是id，则解析成的sql为order by id.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;#&lt;/code&gt;方式能够很大程度防止sql注入。　&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;方式无法防止Sql注入。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;方式一般用于传入数据库对象，例如传入表名.　&lt;/li&gt;
+&lt;li&gt;一般能用&lt;code&gt;#&lt;/code&gt;的就别用&lt;code&gt;$&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;介绍一下Mybatis和主要的工作过程？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;每一个Mybatis的应用程序都以一个SqlSessionFactory对象的实例为核心。首先用字节流通过Resource将配置文件读入，然后通过SqlSessionFactoryBuilder().build方法创建SqlSessionFactory，然后再通过SqlSessionFactory.openSession()方法创建一个SqlSession为每一个数据库事务服务。 经历了Mybatis初始化 –&amp;gt;创建SqlSession –&amp;gt;运行SQL语句，返回结果三个过程&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;写出Mybatis动态sql语句中任意5个标签？&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;if、where、when、choose、otherwise
+- [ ] &lt;strong&gt;Mybatis分页时可以写分页的语句或者用到一个类, 这个类的名字叫？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;RowBounds
+- [ ] &lt;strong&gt;(简答)如果Mybatis进行查询的时候实体类的属性名和数据库字段不一致怎么办 ?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;用resultMap与之对应sql中使用别名&lt;/p&gt;
+
+&lt;h3 id=&#34;网络&#34;&gt;网络&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;TCP和UDP&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;三次握手协议&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;1、当我们在浏览器的地址栏输入www.google.com,然后回车，这一瞬间到看到页面到底发生了什么呢？&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;DNS域名解析 –&amp;gt; 发起TCP的三次握手 –&amp;gt; 建立TCP连接后发起http请求 –&amp;gt; 服务器响应http请求，浏览器得到html代码 –&amp;gt; 浏览器解析html代码，并请求html代码中的资源（如javascript、css、图片等） –&amp;gt; 浏览器对页面进行渲染呈现给用户
+- [ ] &lt;strong&gt;2、说下TCP三次握手的过程？&lt;/strong&gt;
+  - 第一次握手：建立连接时,客户端发送syn包(syn=j)到服务器,并进入SYN_SEND状态,等待服务器确认；
+SYN：同步序列编号(Synchronize Sequence Numbers)
+  - 第二次握手：服务器收到syn包,必须确认客户的SYN（ack=j+1）,同时自己也发送一个SYN包（syn=k）,即SYN+ACK包,此时服务器进入SYN_RECV状态；
+  - 第三次握手：客户端收到服务器的SYN＋ACK包,向服务器发送确认包ACK(ack=k+1),此包发送完毕,客户端和服务器进入ESTABLISHED状态,完成三次握手.
+  - 完成三次握手,客户端与服务器开始传送数据
+- [ ] &lt;strong&gt;3、HTTP和HTTPS的区别？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;CA证书、加密传输SSL、端口不同80和443、无状态和有状态。
+- [ ] &lt;strong&gt;4、User-Agent、Host？&lt;/strong&gt;
+- [ ] &lt;strong&gt;5、Cookie、Session？&lt;/strong&gt;
+- [ ] &lt;strong&gt;6、什么是MIME？常用的有哪些？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;MIME规定了用于表示各种各样的数据类型的符号化方法。 此外，在万维网中使用的HTTP协议中也使用了MIME的框架，标准被扩展为互联网媒体类型。
+- [ ] &lt;strong&gt;7、服务器返回给客户端http响应包的状态码有哪几大类？302、304分别是什么意思？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;1xx: 信息性状态码
+    100, 101
+2xx: 成功状态码
+    200：OK
+3xx: 重定向状态码
+    301: 永久重定向, Location响应首部的值仍为当前URL，因此为隐藏重定向;
+    302: 临时重定向，显式重定向, Location响应首部的值为新的URL
+    304：Not Modified  未修改，比如本地缓存的资源文件和服务器上比较时，发现并没有修改，服务器返回一个304状态码，告诉浏览器，你不用请求该资源，直接使用本地的资源即可。
+4xx: 客户端错误状态码
+    404: Not Found  请求的URL资源并不存在
+5xx: 服务器端错误状态码
+    500: Internal Server Error  服务器内部错误
+    502: Bad Gateway  前面代理服务器联系不到后端的服务器时出现
+    504：Gateway Timeout  这个是代理能联系到后端的服务器，但是后端的服务器在规定的时间内没有给代理服务器响应
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;算法&#34;&gt;算法&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 5台服务器如何选出leader(选举算法)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 二叉树遍历&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;linux&#34;&gt;linux&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 用awk统计一个ip文件中top10&lt;/label&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] top命令&lt;/p&gt;
+
+&lt;h3 id=&#34;性能优化&#34;&gt;性能优化&lt;/h3&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;怎样诊断高CPU的应用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.voidcn.com/article/p-mlntccbq-nw.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.voidcn.com/article/p-mlntccbq-nw.html&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/6d573e42310a&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://www.jianshu.com/p/6d573e42310a&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;top {pid}
+top -Hp {pid}
+printf &amp;quot;%x\h&amp;quot; nid
+jstack {vmid}|grep {nid}
+线程的状态：
+NEW,未启动的。不会出现在Dump中。
+RUNNABLE,在虚拟机内执行的。
+BLOCKED,受阻塞并等待监视器锁。
+WATING,无限期等待另一个线程执行特定操作。
+TIMED_WATING,有时限的等待另一个线程的特定操作。
+TERMINATED,已退出的。
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;组合索引知道最左原则，但针对多个列顺序问题不知道应该怎么考虑&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;当一个Java程序响应很慢时如何查找问题&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;当一个Java程序频繁FullGC时如何解决问题，如何查看垃圾回收日志&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;当一个Java应用发生OutOfMemory时该如何解决，年轻代、年老代、永久代解决办法不同，导致原因也不同&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;怎样诊断高CPU的应用&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;CAP只知道概念，什么是分区容忍答不上来&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;分布式系统高可用和扩展&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;jvm gc&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;分布式事务 二阶段提交&lt;/strong&gt;
+
+
+&lt;br /&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;开放思维&#34;&gt;开放思维&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;strong&gt;文章&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://segmentfault.com/a/1190000016172470&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://segmentfault.com/a/1190000016172470&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/sinat_35512245/article/details/60325685&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/sinat_35512245/article/details/60325685&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://zhuanlan.zhihu.com/p/33273041&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/33273041&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;a href=&#34;https://segmentfault.com/a/1190000016985310&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://segmentfault.com/a/1190000016985310&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;设计一个生产者（文件读）消费者（把文件数据写到网络）模型，使用 wait、notify或其他方法实现&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;日志查找关键字&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;责任链，排序&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;给出n个节点，标号分别从0到 n-1 并且给出一个无向边的列表 (给出每条边的两个顶点), 写一个函数去判断这张无向图是否是一棵树，假设我们不会给出重复的边在边的列表当中. 无向边 [0, 1] 和 [1, 0] 是同一条边， 因此他们不会同时出现在我们给你的边的列表当中。&lt;/strong&gt;样例：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;          1) 给出n = 5 并且 edges = [0, 1], [0, 2], [0, 3], [1, 4], 返回 true.
+          2) 给出n = 5 并且 edges = [0, 1], [1, 2], [2, 3], [1, 3], [1, 4], 返回 false.
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;一个有序数组，实现一个查找函数，找出指定元素在数组中第一次出现的位置，要求：时间复杂度最优；&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;如何创建线程&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;第一种方法：继承Thread类，重写run()方法，run()方法代表线程要执行的任务。&lt;/li&gt;
+&lt;li&gt;第二种方法：实现Runnable接口，重写run()方法，run()方法代表线程要执行的任务。&lt;/li&gt;
+&lt;li&gt;第三种方法：实现callable接口，重写call()方法，call()作为线程的执行体，具有返回值，并且可以对异常进行声明和抛出&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使用start()方法来启动线程
+优点：因为JAVA是单继承机制，当我们继承Thread类后就不能继承其他类了，所以选用实现Runnable接口。
+  - 1.通过实现Runnable接口来创建Thread线程：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;步骤1：创建实现Runnable接口的类：   
+Java代码 
+  class SomeRunnable implements Runnable   { 
+  public void run()   { 
+  //do something here   }  
+} 
+  步骤2：创建一个类对象： 
+  Runnable oneRunnable = new SomeRunnable();   
+步骤3：由Runnable创建一个Thread对象：   
+Thread oneThread = new Thread(oneRunnable);   
+步骤4：启动线程：   
+oneThread.start(); 
+  至此，一个线程就创建完成了。 
+  当调用完oneRunnable对象中的void run();方法后，线程就消亡了。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2.通过继承Thread类来创建一个线程：&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;步骤1：定义一个继承Thread类的子类：   
+Java代码 
+  class SomeThead extends Thraad   { 
+  public void run()   { 
+  //do something here   }   } 
+  步骤2：构造子类的一个对象： 
+ SomeThread oneThread = new SomeThread();   
+  步骤3：启动线程：   
+ oneThread.start(); 
+  至此，一个线程就创建完成了。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;3.通过Callable和Future创建线程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;（1）创建Callable接口的实现类，并实现call()方法，该call()方法将作为线程执行体，并且有返回值。
+（2）创建Callable实现类的实例，使用FutureTask类来包装Callable对象，该FutureTask对象封装了该Callable对象的call()方法的返回值。
+（3）使用FutureTask对象作为Thread对象的target创建并启动新线程。
+（4）调用FutureTask对象的get()方法来获得子线程执行结束后的返回值其中，Callable接口(也只有一个方法)定义如下：  
+  Java代码 
+  public interface Callable   { 
+  V call() throws Exception;   } 
+  步骤1：创建实现Callable接口的类SomeCallable(略);   
+  步骤2：创建一个类对象： 
+      Callable oneCallable = new SomeCallable(); 
+  步骤3：由Callable创建一个FutureTask对象：   
+    FutureTask oneTask = new FutureTask(oneCallable); 
+  注释： FutureTask是一个包装器，它通过接受Callable来创建，它同时实现了 Future和Runnable接口。 
+  步骤4：由FutureTask创建一个Thread对象：   
+    Thread oneThread = new Thread(oneTask);   
+  步骤5：启动线程：  
+    oneThread.start(); 
+  至此，一个线程就创建完成了。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;每个单词是以26个大写或小写英文字母构成，可能含有非法字符，非构成单词的字符均视为单词间隔符，要求倒排后的单词间隔符以一个空格表示；如果原字符串中相邻单词间有多个间隔符时，倒排转换后也只允许出现一个空格间隔符，不用写main函数，只写字符串处理函数就可以；不用IDE，直接在网页上编写。&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;比如：
+【输入】I am @!#$software1234engineer1234
+【输出】engineer software am I**&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;String input = &amp;quot;I am @!#$software1234engineer1234&amp;quot;;
+String replacedStr = input.replaceAll(&amp;quot;[^a-zA-Z]&amp;quot;,&amp;quot; &amp;quot;);
+
+String [] splitedStr = replacedStr.split(&amp;quot; &amp;quot;);
+
+Stack&amp;lt;String&amp;gt; stack = new Stack();
+for (int i=0;i&amp;lt;splitedStr.length;i++){
+	  String str = splitedStr[i];
+ if (!&amp;quot; &amp;quot;.equals(str)){
+   stack.push(str);
+ }
+}
+
+StringBuilder output = new StringBuilder();
+for (int j=0;j&amp;lt;stack.size();j++){
+  output.append(stack.pop());
+}
+System.out.println(output.toString());
+  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;扩展视野&#34;&gt;扩展视野&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; gRPC&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; fork/join&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 并发和并行&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; lambda表达式&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 异步
+
+&lt;ul&gt;
+&lt;li&gt;nio、netty&lt;/li&gt;
+&lt;li&gt;akka&lt;/li&gt;
+&lt;li&gt;reactor&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;中间件&#34;&gt;中间件&lt;/h3&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; memcache和redis的区别&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; redis能存哪些类型&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; dubbo&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; kafka&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; zk&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
