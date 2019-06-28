@@ -139,26 +139,45 @@ public class BSearch {
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://ifeve.com/15-java-faq/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://ifeve.com/15-java-faq/&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://zhuanlan.zhihu.com/p/34678757&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/34678757&lt;/a&gt;  （讲解的比较详细）&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java内存模型&lt;/strong&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;java内存模型&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/suifeng3051/article/details/52611310&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/suifeng3051/article/details/52611310&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/suifeng3051/article/details/52611310&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/suifeng3051/article/details/52611310&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java Memory Model(&lt;strong&gt;JMM&lt;/strong&gt;)，定义了多线程之间共享变量的可见性和如何在需要的时候对共享变量进行同步。线程之间通讯分为&lt;strong&gt;共享内存&lt;/strong&gt;和&lt;strong&gt;消息传递&lt;/strong&gt;两种方式，java使用的是&lt;strong&gt;共享内存&lt;/strong&gt;的方式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;从JVM角度来看&lt;/strong&gt;，JMM就是决定一个线程对共享变量的写入何时对另一个线程可见，线程之间的共享变量存储在堆中的主内存(main memory)中，每个线程都在线程栈上有一个私有的本地内存(local memory)，本地内存中存储了该线程以读/写共享变量的副本。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;从硬件角度来看&lt;/strong&gt;，我们的数据存储再内存中，负责计算的CPU每个核都有一组寄存器（也就是CPU的存储器），多个CPU缓存。处理速度：&lt;strong&gt;寄存器&amp;gt;一级缓存&amp;gt;二级缓存&amp;gt;主内存&lt;/strong&gt;，当CPU需要访问主内存中的数据的时候，会先读取一部分主内存数据到CPU缓存，再把CPU缓存的数据读取到寄存器。当CPU需要写入数据到主存时，同样会先flush寄存器到CPU缓存，再在某些节点把缓存数据flush到主存中。&lt;/li&gt;
+&lt;li&gt;通过上述两个角度我们可以看出对内存中数据的读取，我们需要解决数据的可见性和执行的顺序性，java提供了&lt;code&gt;volatile&lt;/code&gt;和&lt;code&gt;synchronized&lt;/code&gt;这两个关键字来解决这些问题。&lt;code&gt;volatile&lt;/code&gt;关键字基于CPU内存屏障指令实现，保证一个线程对变量的写入可以对其他线程可见。&lt;code&gt;synchronized&lt;/code&gt;代码块可以保证同一时刻只能有一个线程进入代码的竞争区，也能保证&lt;code&gt;volatile&lt;/code&gt;的可见性，当线程退出代码块时，对变量的更新将会flush到主存中，不管这些变量是不是volatile类型的。
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Thread方法的使用&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;conncurrentHashmap的实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;j.u.c下列类的实现，AQS&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;Thread方法的使用&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;conncurrentHashmap的实现&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;j.u.c下列类的实现，AQS&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;synchronized原理&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/javazejian/article/details/72828483&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/javazejian/article/details/72828483&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/chenssy/article/details/54883355&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/chenssy/article/details/54883355&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java 线程池实现，拒绝策略&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;写一个死锁&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;现实工作中什么场景使用过多线程？简单介绍一个线程池&lt;/strong&gt;
-newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;什么是守护线程，守护线程和非守护线程的区别以及用法&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;java 线程池实现，拒绝策略&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;synchronized原理&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;写一个死锁&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;现实工作中什么场景使用过多线程？简单介绍一个线程池&lt;/strong&gt;
+newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;什么是守护线程，守护线程和非守护线程的区别以及用法&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;[ ] &lt;strong&gt;synchronized和volatile的作用&lt;/strong&gt;&lt;/p&gt;
 
