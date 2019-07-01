@@ -138,7 +138,7 @@ public class BSearch {
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/SEU_Calvin/article/details/52411531&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/SEU_Calvin/article/details/52411531&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://ifeve.com/15-java-faq/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://ifeve.com/15-java-faq/&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://zhuanlan.zhihu.com/p/34678757&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://zhuanlan.zhihu.com/p/34678757&lt;/a&gt;  （讲解的比较详细）&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java内存模型&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java内存模型&lt;/strong&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/suifeng3051/article/details/52611310&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/suifeng3051/article/details/52611310&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
@@ -148,7 +148,19 @@ public class BSearch {
 &lt;li&gt;通过上述两个角度我们可以看出对内存中数据的读取，我们需要解决数据的可见性和执行的顺序性，java提供了&lt;code&gt;volatile&lt;/code&gt;和&lt;code&gt;synchronized&lt;/code&gt;这两个关键字来解决这些问题。&lt;code&gt;volatile&lt;/code&gt;关键字基于CPU内存屏障指令实现，保证一个线程对变量的写入可以对其他线程可见。&lt;code&gt;synchronized&lt;/code&gt;代码块可以保证同一时刻只能有一个线程进入代码的竞争区，也能保证&lt;code&gt;volatile&lt;/code&gt;的可见性，当线程退出代码块时，对变量的更新将会flush到主存中，不管这些变量是不是volatile类型的。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Thread方法的使用&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Thread方法的使用&lt;/strong&gt;
+ 线程的状态从创建到最终的消亡分为：new(创建)、runnable(就绪)、running(运行)、blocked(阻塞)、time waiting、waiting、dead(消亡)，thread的主要方法：
+
+&lt;ul&gt;
+&lt;li&gt;start()：开启一个新的线程执行用户定义的子任务（run()中执行的任务）,在这个过程中会为对应线程分配需要的资源；&lt;/li&gt;
+&lt;li&gt;run()：执行具体任务的代码逻辑；&lt;/li&gt;
+&lt;li&gt;sleep()：让线程睡眠，交出CPU，让CPU执行其他任务，但是不会释放当前线程持有的对象锁；&lt;/li&gt;
+&lt;li&gt;yield()：让出当前线程的CPU使用权给拥有相同优先级的线程执行任务，和slee()不同的是不能控制具体的交出CPU的时间，和sleep()一样不会释放当前线程持有的对象锁；&lt;/li&gt;
+&lt;li&gt;join()：底层调用的是Object的wait()，wait()方法会让线程进入阻塞状态，并且释放占有的锁，并交出CPU执行权限，&lt;/li&gt;
+&lt;li&gt;interrupt()&lt;/li&gt;
+&lt;li&gt;stop()&lt;/li&gt;
+&lt;li&gt;destroy()&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;conncurrentHashmap的实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;j.u.c下列类的实现，AQS&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;
