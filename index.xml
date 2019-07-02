@@ -161,66 +161,49 @@ public class BSearch {
 &lt;li&gt;stop()&lt;/li&gt;
 &lt;li&gt;destroy()&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;conncurrentHashmap的实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;j.u.c下列类的实现，AQS&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;
 
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/javazejian/article/details/72828483&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/javazejian/article/details/72828483&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/chenssy/article/details/54883355&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/chenssy/article/details/54883355&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java 线程池实现，拒绝策略&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;写一个死锁&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;现实工作中什么场景使用过多线程？简单介绍一个线程池&lt;/strong&gt;
-newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;什么是守护线程，守护线程和非守护线程的区别以及用法&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized和volatile的作用&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;每个对象都存在着一个&lt;code&gt;monitor&lt;/code&gt;与之关联，对象与其&lt;code&gt;monitor&lt;/code&gt;之间的关系有存在多种实现方式，如&lt;code&gt;monitor&lt;/code&gt;可以与对象一起创建销毁或当线程试图获取对象锁时自动生成，但当一个&lt;code&gt;monitor&lt;/code&gt;被某个线程持有后，它便处于锁定状态。在Java虚拟机(HotSpot)中，&lt;code&gt;monitor&lt;/code&gt;是由&lt;code&gt;ObjectMonitor&lt;/code&gt;实现的，&lt;code&gt;ObjectMonitor&lt;/code&gt;中有两个队列，&lt;code&gt;_WaitSet&lt;/code&gt;和&lt;code&gt;_EntryList&lt;/code&gt;，用来保存&lt;code&gt;ObjectWaiter对象&lt;/code&gt;列表( 每个等待锁的线程都会被封装成ObjectWaiter对象)，&lt;code&gt;_owner&lt;/code&gt;指向持有&lt;code&gt;ObjectMonitor对象&lt;/code&gt;的线程，当多个线程同时访问一段同步代码时，首先会进入&lt;code&gt;_EntryList&lt;/code&gt;集合，当线程获取到对象的&lt;code&gt;monitor&lt;/code&gt;后进入&lt;code&gt;_Owner区域&lt;/code&gt;并把&lt;code&gt;monitor&lt;/code&gt;中的&lt;code&gt;owner变量&lt;/code&gt;设置为当前线程同时&lt;code&gt;monitor&lt;/code&gt;中的计数器count加1，若线程调用 wait() 方法，将释放当前持有的&lt;code&gt;monitor&lt;/code&gt;，&lt;code&gt;owner变量&lt;/code&gt;恢复为null，count自减1，同时该线程进入&lt;code&gt;WaitSet集合&lt;/code&gt;中等待被唤醒。若当前线程执行完毕也将释放&lt;code&gt;monitor(锁)&lt;/code&gt;并复位变量的值，以便其他线程进入获取&lt;code&gt;monitor(锁)&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;当用来修饰同步代码块时&lt;/strong&gt;，从字节码中可知同步语句块的实现使用的是&lt;code&gt;monitorenter&lt;/code&gt;和&lt;code&gt;monitorexit指令&lt;/code&gt;，其中&lt;code&gt;monitorenter指令&lt;/code&gt;指向同步代码块的开始位置，&lt;code&gt;monitorexit指令&lt;/code&gt;则指明同步代码块的结束位置和异常处理器结束的位置，并且为了保证在方法异常完成时&lt;code&gt;monitorenter&lt;/code&gt;和&lt;code&gt;monitorexit&lt;/code&gt;指令依然可以正确配对执行，编译器会自动产生一个异常处理器，它可以处理所有异常，在捕获到异常后执行&lt;code&gt;monitorexit&lt;/code&gt;指令。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;当用来修饰方法时&lt;/strong&gt;，通过字节码可以看出在方法的flags中多了&lt;code&gt;ACC_SYNCHRONIZED&lt;/code&gt;标识，该标识指明了该方法是一个同步方法，JVM通过该ACC_SYNCHRONIZED访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用&lt;/li&gt;
+&lt;li&gt;锁的状态总共有四种，无锁状态、偏向锁、轻量级锁和重量级锁。随着锁的竞争，锁可以从偏向锁升级到轻量级锁，再升级的重量级锁，但是锁的升级是单向的，也就是说只能从低到高升级，不会出现锁的降级。
 
 &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;偏向锁&lt;/strong&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;轻量级锁&lt;/strong&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;重量级锁&lt;/strong&gt;：即监视器锁(monitor)，因为它是依赖于底层的操作系统的&lt;code&gt;Mutex Lock&lt;/code&gt;来实现的，而操作系统实现线程之间的切换时需要从用户态转换到核心态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，这也是为什么早期的synchronized效率低的原因。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java 线程池实现，拒绝策略&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;现实工作中什么场景使用过多线程？简单介绍一个线程池&lt;/strong&gt;
+newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;什么是守护线程，守护线程(Daemon Thread)和非守护线程(User Thread)的区别以及用法&lt;/strong&gt;
+ &lt;br/&gt;守护线程可以在new Thread()后，通过thread.setDaemon(true)设置，这个方法必须在start()之前设置，不然会报错。比较常见的守护线程就是GC线程，当虚拟机退出时会等待非守护线程关闭，而不会等待守护线程关闭才退出。一般用户线程是执行日常工作的，而守护线程用来给其他用户线程提供辅助服务的。&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized和volatile的作用&lt;/strong&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;1. volatile关键字的作用
-&lt;br/&gt; 其实volatile关键字的作用就是保证了可见性和有序性（不保证原子性），如果一个共享变量被volatile关键字修饰，那么如果一个线程修改了这个共享变量后，其他线程是立马可知的。为什么是这样的呢？比如，线程A修改了自己的共享变量副本，这时如果该共享变量没有被volatile修饰，那么本次修改不一定会马上将修改结果刷新到主存中，如果此时B去主存中读取共享变量的值，那么这个值就是没有被A修改之前的值。如果该共享变量被volatile修饰了，那么本次修改结果会强制立刻刷新到主存中，如果此时B去主存中读取共享变量的值，那么这个值就是被A修改之后的值了。
-volatile能禁止指令重新排序，在指令重排序优化时，在volatile变量之前的指令不能在volatile之后执行，在volatile之后的指令也不能在volatile之前执行，所以它保证了有序性。&lt;/li&gt;
+&lt;br/&gt; 仅能保证可见性和有序性（不保证原子性），如果一个共享变量被volatile关键字修饰，那么如果一个线程修改了这个共享变量后，其他线程是立马可知的。为什么是这样的呢？比如，线程A修改了自己的共享变量副本，这时如果该共享变量没有被volatile修饰，那么本次修改不一定会马上将修改结果刷新到主存中，如果此时B去主存中读取共享变量的值，那么这个值就是没有被A修改之前的值。如果该共享变量被volatile修饰了，那么本次修改结果会强制立刻刷新到主存中，如果此时B去主存中读取共享变量的值，那么这个值就是被A修改之后的值了。
+volatile能禁止指令重新排序，JMM会在写入这个字段后插入一个Write-Barrier指令，并在读取这个字段之前插入一个Read-Barrier指令，这保证了一个线程写入变量内容后，任何线程访问该变量时都会拿到最新值。在指令重排序优化时，在volatile变量之前的指令不能在volatile之后执行，在volatile之后的指令也不能在volatile之前执行，所以它保证了有序性。&lt;/li&gt;
 &lt;li&gt;2. synchronized关键字的作用
-&lt;br/&gt; synchronized提供了同步锁的概念，被synchronized修饰的代码段可以防止被多个线程同时执行，必须一个线程把synchronized修饰的代码段都执行完毕了，其他的线程才能开始执行这段代码。
-因为synchronized保证了在同一时刻，只能有一个线程执行同步代码块，所以执行同步代码块的时候相当于是单线程操作了，那么线程的可见性、原子性、有序性（线程之间的执行顺序）它都能保证了。&lt;/li&gt;
+&lt;br/&gt; synchronized提供了同步锁的概念，它阻止了其他线程获取当前对象的监控锁，保证了synchronized修饰的代码段可以防止被多个线程同时执行，必须一个线程把synchronized修饰的代码段都执行完毕了，其他的线程才能开始执行这段代码。synchronized保证了在同一时刻，只能有一个线程执行同步代码块，所以执行同步代码块的时候相当于是单线程操作了，那么线程的可见性、原子性、有序性（线程之间的执行顺序）它都能保证了。synchronized还会创建一个内存屏障，内存屏障指令保证了所有CPU操作结果都会直接刷到主存中，从而保证了操作的内存可见性，同时也使得先获得这个锁的线程的所有操作，都happens-before于随后获得这个锁的线程的操作。&lt;/li&gt;
 &lt;li&gt;3. volatile关键字和synchronized关键字的区别
 
 &lt;ul&gt;
 &lt;li&gt;volatile只能作用于变量，使用范围较小。synchronized可以用在变量、方法、类、同步代码块等，使用范围比较广。&lt;/li&gt;
 &lt;li&gt;volatile只能保证可见性和有序性，不能保证原子性。而可见性、有序性、原子性synchronized都可以包证。&lt;/li&gt;
 &lt;li&gt;volatile不会造成线程阻塞。synchronized可能会造成线程阻塞。&lt;/li&gt;
+&lt;li&gt;volatile修饰的变量不会被编译器优化，synchronized会被编译器优化。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;线程安全&lt;/strong&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; ArrayList和Vector有什么区别?&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; HashMap和HashTable有什么区别?&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; StringBuilder和StringBuffer有什么区别?
-&lt;br/&gt;这些都是Java面试中常见的基础问题。面对这样的问题，回答是：ArrayList是非线程安全的，Vector是线程安全的；HashMap是非线程安全的，HashTable是线程安全的；StringBuilder是非线程安全的，StringBuffer是线程安全的。
-&lt;br/&gt;此时如果继续问：什么是线程安全？线程安全和非线程安全有什么区别？分别在什么情况下使用？
-
-&lt;ul&gt;
-&lt;li&gt;线程安全：
-当多个线程类并发操作某类的某个方法，(在该方法内部)来修改这个类的某个成员变量的值，不会出错，则我们就说，该的这个方法是线程安全的。
-某类的某方法是否线程安全的关键是：
-
-&lt;ul&gt;
-&lt;li&gt;该方法是否修改该类的成员变量;&lt;/li&gt;
-&lt;li&gt;是否给该方法加锁(是否用synchronized关键字修饰）。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;线程不安全：
-&lt;br/&gt; 当多个线程类并发操作某类的某个方法，(在该方法内部)来修改这个类的某个成员变量的值，很容易就会发生错误，故我们就说，这个方法是线程不安全的。如果要把这个方法变成线程安全的，则用 synchronized关键字来修饰该方法即可。
-&lt;br/&gt;总结：若多个线程同时修改某个外部传来的对象的成员变量，很容易就会出现错误，我们称之为线程不安全。(该类的这个方法是线程不安全的。若要线程安全，用synchronized关键字修饰即可)。&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/chenssy/article/details/54883355&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/chenssy/article/details/54883355&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://blog.csdn.net/javazejian/article/details/72828483&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/javazejian/article/details/72828483&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;jvm&#34;&gt;JVM&lt;/h3&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 逃逸分析&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;文章：
 
 &lt;ul class=&#34;task-list&#34;&gt;
@@ -233,8 +216,7 @@ volatile能禁止指令重新排序，在指令重排序优化时，在volatile�
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.importnew.com/21463.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.importnew.com/21463.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://www.cnblogs.com/gw811/archive/2012/10/18/2730117.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.cnblogs.com/gw811/archive/2012/10/18/2730117.html&lt;/a&gt; (java内存管理)&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&lt;/a&gt; (java内存管理机制
-)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&lt;/a&gt; (java内存管理机制)&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; java堆和栈
 
@@ -244,6 +226,7 @@ volatile能禁止指令重新排序，在指令重排序优化时，在volatile�
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 垃圾回收机制&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 逃逸分析&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 简单介绍下JVM各种参数及调优&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -321,9 +304,11 @@ Java7编译器进行了优化，String比较的原理是先使用hashCode判断�
 &lt;ul&gt;
 &lt;li&gt;用于保存某个线程共享变量：对于同一个static ThreadLocal，不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConncurrentHashmap的实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConcurrentHashmap的锁是如何加的？是不是分段越多越好?&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;concurrenhashmap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Concurrenhashmap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;并发队列ConcurrentLinkedQueue和阻塞队列LinkedBlockingQueue用法&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;J.U.C下列类的实现，AQS&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;读写锁&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;可重入的读写锁，可重入是如何实现的？&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;List，Map，Set接口，Collection接口差异&lt;/strong&gt;
@@ -667,6 +652,7 @@ TERMINATED,已退出的。
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;设计一个生产者（文件读）消费者（把文件数据写到网络）模型，使用 wait、notify或其他方法实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;日志查找关键字&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;写一个死锁&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;责任链，排序&lt;/strong&gt;&lt;br /&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;给出n个节点，标号分别从0到 n-1 并且给出一个无向边的列表 (给出每条边的两个顶点), 写一个函数去判断这张无向图是否是一棵树，假设我们不会给出重复的边在边的列表当中. 无向边 [0, 1] 和 [1, 0] 是同一条边， 因此他们不会同时出现在我们给你的边的列表当中。&lt;/strong&gt;样例：&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
