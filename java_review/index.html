@@ -46,7 +46,7 @@
     "articleSection" : "",
     "name" : "",
     "headline" : "",
-    "description" : "多线程 文章 https:\/\/juejin.im\/post\/5b57b81af265da0f4b7a9ae5 https:\/\/blog.csdn.net\/SEU_Calvin\/article\/details\/52411531 http:\/\/ifeve.com\/15-java-faq\/ https:\/\/zhuanlan.zhihu.com\/p\/34678757 （讲解的比较详细） java内存模型 http:\/\/blog.csdn.net\/suifeng3051\/article\/details\/52611310 Java Memory Model(JMM)，定义了多线程之间共享变量的可见性和如何在需要的时候对共享变量进行同步。线程之间通讯分为共享内存和消息传递两种方式，java使用的是共享内存的方式。 从JVM角度来看，JMM就是决定一个线程对共享变量的写入何时对另一个线程可见，线程之间的共享变量存储在堆中的主内存(main memory)中，每个线程都在线程栈上有一个私有的本地内存(local memory)，本地内存中存储了该线程以读\/写共享变量的副本。 从硬件角度来看，我们的数据存储再内存中，负责计算的CPU每个核都有一组寄存器（也就是CPU的存储器），多个CPU缓存。处理速度：寄存器\x26gt;一级缓存\x26gt;二级缓存\x26gt;主内存，当CPU需要访问主内存中的数据的时候，会先读取一部分主内存数据到CPU缓存，再把CPU缓存的数据读取到寄存器。当CPU需要写入数据到主存时，同样会先flush寄存器到CPU缓存，再在某些节点把缓存数据flush到主存中。 通过上述两个角度我们可以看出对内存中数据的读取，我们需要解决数据的可见性和执行的顺序性，java提供了volatile和synchronized这两个关键字来解决这些问题。volatile关键字基于CPU内存屏障指令实现，保证一个线程对变量的写入可以对其他线程可见。synchronized代码块可以保证同一时刻只能有一个线程进入代码的竞争区，也能保证volatile的可见性，当线程退出代码块时，对变量的更新将会flush到主存中，不管这些变量是不是volatile类型的。   Thread方法的使用 线程的状态从创建到最终的消亡分为：new(创建)、runnable(就绪)、running(运行)、blocked(阻塞)、time waiting、waiting、dead(消亡)，thread的主要方法：  start()：开启一个新的线程执行用户定义的子任务（run()中执行的任务）,在这个过程中会为对应线程分配需要的资源； run()：执行具体任务的代码逻辑； sleep()：让线程睡眠，交出CPU，让CPU执行其他任务，但是不会释放当前线程持有的对象锁； yield()：让出当前线程的CPU使用权给拥有相同优先级的线程执行任务，和slee()不同的是不能控制具体的交出CPU的时间，和sleep()一样不会释放当前线程持有的对象锁； join()：底层调用的是Object的wait()，wait()方法会让线程进入阻塞状态，并且释放占有的锁，并交出CPU执行权限， interrupt() stop() destroy()  synchronized原理  每个对象都存在着一个monitor与之关联，对象与其monitor之间的关系有存在多种实现方式，如monitor可以与对象一起创建销毁或当线程试图获取对象锁时自动生成，但当一个monitor被某个线程持有后，它便处于锁定状态。在Java虚拟机(HotSpot)中，monitor是由ObjectMonitor实现的，ObjectMonitor中有两个队列，_WaitSet和_EntryList，用来保存ObjectWaiter对象列表( 每个等待锁的线程都会被封装成ObjectWaiter对象)，_owner指向持有ObjectMonitor对象的线程，当多个线程同时访问一段同步代码时，首先会进入_EntryList集合，当线程获取到对象的monitor后进入_Owner区域并把monitor中的owner变量设置为当前线程同时monitor中的计数器count加1，若线程调用 wait() 方法，将释放当前持有的monitor，owner变量恢复为null，count自减1，同时该线程进入WaitSet集合中等待被唤醒。若当前线程执行完毕也将释放monitor(锁)并复位变量的值，以便其他线程进入获取monitor(锁)。 当用来修饰同步代码块时，从字节码中可知同步语句块的实现使用的是monitorenter和monitorexit指令，其中monitorenter指令指向同步代码块的开始位置，monitorexit指令则指明同步代码块的结束位置和异常处理器结束的位置，并且为了保证在方法异常完成时monitorenter和monitorexit指令依然可以正确配对执行，编译器会自动产生一个异常处理器，它可以处理所有异常，在捕获到异常后执行monitorexit指令。 当用来修饰方法时，通过字节码可以看出在方法的flags中多了ACC_SYNCHRONIZED标识，该标识指明了该方法是一个同步方法，JVM通过该ACC_SYNCHRONIZED访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用 锁的状态总共有四种，无锁状态、偏向锁、轻量级锁和重量级锁。随着锁的竞争，锁可以从偏向锁升级到轻量级锁，再升级的重量级锁，但是锁的升级是单向的，也就是说只能从低到高升级，不会出现锁的降级。  偏向锁： 轻量级锁： 重量级锁：即监视器锁(monitor)，因为它是依赖于底层的操作系统的Mutex Lock来实现的，而操作系统实现线程之间的切换时需要从用户态转换到核心态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，这也是为什么早期的synchronized效率低的原因。   java 线程池实现，拒绝策略 现实工作中什么场景使用过多线程？简单介绍一个线程池 newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool 什么是守护线程，守护线程(Daemon Thread)和非守护线程(User Thread)的区别以及用法 守护线程可以在new Thread()后，通过thread.setDaemon(true)设置，这个方法必须在start()之前设置，不然会报错。比较常见的守护线程就是GC线程，当虚拟机退出时会等待非守护线程关闭，而不会等待守护线程关闭才退出。一般用户线程是执行日常工作的，而守护线程用来给其他用户线程提供辅助服务的。 synchronized和volatile的作用 1. volatile关键字的作用  仅能保证可见性和有序性（不保证原子性），如果一个共享变量被volatile关键字修饰，那么如果一个线程修改了这个共享变量后，其他线程是立马可知的。为什么是这样的呢？比如，线程A修改了自己的共享变量副本，这时如果该共享变量没有被volatile修饰，那么本次修改不一定会马上将修改结果刷新到主存中，如果此时B去主存中读取共享变量的值，那么这个值就是没有被A修改之前的值。如果该共享变量被volatile修饰了，那么本次修改结果会强制立刻刷新到主存中，如果此时B去主存中读取共享变量的值，那么这个值就是被A修改之后的值了。 volatile能禁止指令重新排序，JMM会在写入这个字段后插入一个Write-Barrier指令，并在读取这个字段之前插入一个Read-Barrier指令，这保证了一个线程写入变量内容后，任何线程访问该变量时都会拿到最新值。在指令重排序优化时，在volatile变量之前的指令不能在volatile之后执行，在volatile之后的指令也不能在volatile之前执行，所以它保证了有序性。 2. synchronized关键字的作用  synchronized提供了同步锁的概念，它阻止了其他线程获取当前对象的监控锁，保证了synchronized修饰的代码段可以防止被多个线程同时执行，必须一个线程把synchronized修饰的代码段都执行完毕了，其他的线程才能开始执行这段代码。synchronized保证了在同一时刻，只能有一个线程执行同步代码块，所以执行同步代码块的时候相当于是单线程操作了，那么线程的可见性、原子性、有序性（线程之间的执行顺序）它都能保证了。synchronized还会创建一个内存屏障，内存屏障指令保证了所有CPU操作结果都会直接刷到主存中，从而保证了操作的内存可见性，同时也使得先获得这个锁的线程的所有操作，都happens-before于随后获得这个锁的线程的操作。 3. volatile关键字和synchronized关键字的区别  volatile只能作用于变量，使用范围较小。synchronized可以用在变量、方法、类、同步代码块等，使用范围比较广。 volatile只能保证可见性和有序性，不能保证原子性。而可见性、有序性、原子性synchronized都可以包证。 volatile不会造成线程阻塞。synchronized可能会造成线程阻塞。 volatile修饰的变量不会被编译器优化，synchronized会被编译器优化。  https:\/\/blog.",
+    "description" : "多线程 文章 https:\/\/juejin.im\/post\/5b57b81af265da0f4b7a9ae5 https:\/\/blog.csdn.net\/SEU_Calvin\/article\/details\/52411531 http:\/\/ifeve.com\/15-java-faq\/ https:\/\/zhuanlan.zhihu.com\/p\/34678757 （讲解的比较详细） java内存模型 http:\/\/blog.csdn.net\/suifeng3051\/article\/details\/52611310 Java Memory Model(JMM)，定义了多线程之间共享变量的可见性和如何在需要的时候对共享变量进行同步。线程之间通讯分为共享内存和消息传递两种方式，java使用的是共享内存的方式。 从JVM角度来看，JMM就是决定一个线程对共享变量的写入何时对另一个线程可见，线程之间的共享变量存储在堆中的主内存(main memory)中，每个线程都在线程栈上有一个私有的本地内存(local memory)，本地内存中存储了该线程以读\/写共享变量的副本。 从硬件角度来看，我们的数据存储再内存中，负责计算的CPU每个核都有一组寄存器（也就是CPU的存储器），多个CPU缓存。处理速度：寄存器\x26gt;一级缓存\x26gt;二级缓存\x26gt;主内存，当CPU需要访问主内存中的数据的时候，会先读取一部分主内存数据到CPU缓存，再把CPU缓存的数据读取到寄存器。当CPU需要写入数据到主存时，同样会先flush寄存器到CPU缓存，再在某些节点把缓存数据flush到主存中。 通过上述两个角度我们可以看出对内存中数据的读取，我们需要解决数据的可见性和执行的顺序性，java提供了volatile和synchronized这两个关键字来解决这些问题。volatile关键字基于CPU内存屏障指令实现，保证一个线程对变量的写入可以对其他线程可见。synchronized代码块可以保证同一时刻只能有一个线程进入代码的竞争区，也能保证volatile的可见性，当线程退出代码块时，对变量的更新将会flush到主存中，不管这些变量是不是volatile类型的。   Thread方法的使用 线程的状态从创建到最终的消亡分为：new(创建)、runnable(就绪)、running(运行)、blocked(阻塞)、time waiting、waiting、dead(消亡)，thread的主要方法：  start()：开启一个新的线程执行用户定义的子任务（run()中执行的任务）,在这个过程中会为对应线程分配需要的资源； run()：执行具体任务的代码逻辑； sleep()：让线程睡眠，交出CPU，让CPU执行其他任务，但是不会释放当前线程持有的对象锁； yield()：让出当前线程的CPU使用权给拥有相同优先级的线程执行任务，和slee()不同的是不能控制具体的交出CPU的时间，和sleep()一样不会释放当前线程持有的对象锁； join()：join方法的作用是父线程等待子线程执行完成后再执行，换句话说就是将异步执行的线程合并为同步的线程。底层调用的是Object的wait()，wait()方法会让线程进入阻塞状态，并且释放占有的锁，并交出CPU执行权限， interrupt():使处于阻塞的线程抛出InterruptedException，以达到线程中断的效果，但是线程如果未阻塞而是正在运行中，则需要配合通过while(!isInterrupted() \x26amp;\x26amp; 业务条件限制 ){ doSomething();}的方式来中断正在运行的线程。 stop()：这是一个废弃的方法，它是一个不安全的方法。因为调用stop方法会直接终止run方法的调用，并且会抛出一个ThreadDeath错误，如果线程持有某个对象锁的话，会完全释放锁，导致对象状态不一致。所以stop方法基本是不会被用到的。 destroy()：destroy方法也是废弃的方法。基本不会被使用到。  synchronized原理  每个对象都存在着一个monitor与之关联，对象与其monitor之间的关系有存在多种实现方式，如monitor可以与对象一起创建销毁或当线程试图获取对象锁时自动生成，但当一个monitor被某个线程持有后，它便处于锁定状态。在Java虚拟机(HotSpot)中，monitor是由ObjectMonitor实现的，ObjectMonitor中有两个队列，_WaitSet和_EntryList，用来保存ObjectWaiter对象列表( 每个等待锁的线程都会被封装成ObjectWaiter对象)，_owner指向持有ObjectMonitor对象的线程，当多个线程同时访问一段同步代码时，首先会进入_EntryList集合，当线程获取到对象的monitor后进入_Owner区域并把monitor中的owner变量设置为当前线程同时monitor中的计数器count加1，若线程调用 wait() 方法，将释放当前持有的monitor，owner变量恢复为null，count自减1，同时该线程进入WaitSet集合中等待被唤醒。若当前线程执行完毕也将释放monitor(锁)并复位变量的值，以便其他线程进入获取monitor(锁)。 当用来修饰同步代码块时，从字节码中可知同步语句块的实现使用的是monitorenter和monitorexit指令，其中monitorenter指令指向同步代码块的开始位置，monitorexit指令则指明同步代码块的结束位置和异常处理器结束的位置，并且为了保证在方法异常完成时monitorenter和monitorexit指令依然可以正确配对执行，编译器会自动产生一个异常处理器，它可以处理所有异常，在捕获到异常后执行monitorexit指令。 当用来修饰方法时，通过字节码可以看出在方法的flags中多了ACC_SYNCHRONIZED标识，该标识指明了该方法是一个同步方法，JVM通过该ACC_SYNCHRONIZED访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用 锁的状态总共有四种，无锁状态、偏向锁、轻量级锁和重量级锁。随着锁的竞争，锁可以从偏向锁升级到轻量级锁，再升级的重量级锁，但是锁的升级是单向的，也就是说只能从低到高升级，不会出现锁的降级。  偏向锁： 轻量级锁： 重量级锁：即监视器锁(monitor)，因为它是依赖于底层的操作系统的Mutex Lock来实现的，而操作系统实现线程之间的切换时需要从用户态转换到核心态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，这也是为什么早期的synchronized效率低的原因。   java 线程池实现  构造函数参数：  corePoolSize(基本线程数)：初始化和在没有任务执行时线程池的大小，只有在工作队列满了的情况下才会创建超出这个数量的线程； maximumPoolSize(最大线程数)：可同时活动的线程数的上限； keepAliveTime(线程空闲时间)：如果某个线程的空闲时间超过存活时间，那么将被标记为可回收的，并且当线程池的当前大小超过了基本大小时，这个线程将被终止。 unit(时间单位) workQueue(任务队列) threadFactory(线程工厂) rejectedExecutionHandler(饱和策略)  可通过Executors提供的newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool、newSingleThreadExecutor等静态方法来构建线程池，这些方法部分内部是使用new ThreadPoolExecutor()来构建的;  newFixedThreadPool：将线程池的基本大小和最大大小设置为参数中指定的值，而且创建的线程池不会超时; newCachedThreadPool：将线程池的最大大小设置为Integer.",
     "inLanguage" : "en-us",
     "author" : "j.c",
     "creator" : "j.c",
@@ -57,7 +57,7 @@
     "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
     "dateModified" : "0001-01-01 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/ftex.github.io\/java_review\/",
-    "wordCount" : "863",
+    "wordCount" : "898",
     "keywords" : [  "飞雷神"]
 }
 </script>
@@ -139,7 +139,7 @@
 <li>通过上述两个角度我们可以看出对内存中数据的读取，我们需要解决数据的可见性和执行的顺序性，java提供了<code>volatile</code>和<code>synchronized</code>这两个关键字来解决这些问题。<code>volatile</code>关键字基于CPU内存屏障指令实现，保证一个线程对变量的写入可以对其他线程可见。<code>synchronized</code>代码块可以保证同一时刻只能有一个线程进入代码的竞争区，也能保证<code>volatile</code>的可见性，当线程退出代码块时，对变量的更新将会flush到主存中，不管这些变量是不是volatile类型的。</li>
 </ul></label></li>
 </ul></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>Thread方法的使用</strong>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>Thread方法的使用</strong>
  线程的状态从创建到最终的消亡分为：new(创建)、runnable(就绪)、running(运行)、blocked(阻塞)、time waiting、waiting、dead(消亡)，thread的主要方法：
 
 <ul>
@@ -147,12 +147,12 @@
 <li>run()：执行具体任务的代码逻辑；</li>
 <li>sleep()：让线程睡眠，交出CPU，让CPU执行其他任务，但是不会释放当前线程持有的对象锁；</li>
 <li>yield()：让出当前线程的CPU使用权给拥有相同优先级的线程执行任务，和slee()不同的是不能控制具体的交出CPU的时间，和sleep()一样不会释放当前线程持有的对象锁；</li>
-<li>join()：底层调用的是Object的wait()，wait()方法会让线程进入阻塞状态，并且释放占有的锁，并交出CPU执行权限，</li>
-<li>interrupt()</li>
-<li>stop()</li>
-<li>destroy()</li>
+<li>join()：join方法的作用是父线程等待子线程执行完成后再执行，换句话说就是将异步执行的线程合并为同步的线程。底层调用的是Object的wait()，wait()方法会让线程进入阻塞状态，并且释放占有的锁，并交出CPU执行权限，</li>
+<li>interrupt():使处于阻塞的线程抛出InterruptedException，以达到线程中断的效果，但是线程如果未阻塞而是正在运行中，则需要配合通过while(!isInterrupted() &amp;&amp; 业务条件限制 ){ doSomething();}的方式来中断正在运行的线程。</li>
+<li>stop()：这是一个废弃的方法，它是一个不安全的方法。因为调用stop方法会直接终止run方法的调用，并且会抛出一个ThreadDeath错误，如果线程持有某个对象锁的话，会完全释放锁，导致对象状态不一致。所以stop方法基本是不会被用到的。</li>
+<li>destroy()：destroy方法也是废弃的方法。基本不会被使用到。</li>
 </ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>synchronized原理</strong>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>synchronized原理</strong>
 
 <ul>
 <li>每个对象都存在着一个<code>monitor</code>与之关联，对象与其<code>monitor</code>之间的关系有存在多种实现方式，如<code>monitor</code>可以与对象一起创建销毁或当线程试图获取对象锁时自动生成，但当一个<code>monitor</code>被某个线程持有后，它便处于锁定状态。在Java虚拟机(HotSpot)中，<code>monitor</code>是由<code>ObjectMonitor</code>实现的，<code>ObjectMonitor</code>中有两个队列，<code>_WaitSet</code>和<code>_EntryList</code>，用来保存<code>ObjectWaiter对象</code>列表( 每个等待锁的线程都会被封装成ObjectWaiter对象)，<code>_owner</code>指向持有<code>ObjectMonitor对象</code>的线程，当多个线程同时访问一段同步代码时，首先会进入<code>_EntryList</code>集合，当线程获取到对象的<code>monitor</code>后进入<code>_Owner区域</code>并把<code>monitor</code>中的<code>owner变量</code>设置为当前线程同时<code>monitor</code>中的计数器count加1，若线程调用 wait() 方法，将释放当前持有的<code>monitor</code>，<code>owner变量</code>恢复为null，count自减1，同时该线程进入<code>WaitSet集合</code>中等待被唤醒。若当前线程执行完毕也将释放<code>monitor(锁)</code>并复位变量的值，以便其他线程进入获取<code>monitor(锁)</code>。</li>
@@ -166,9 +166,46 @@
 <li><strong>重量级锁</strong>：即监视器锁(monitor)，因为它是依赖于底层的操作系统的<code>Mutex Lock</code>来实现的，而操作系统实现线程之间的切换时需要从用户态转换到核心态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，这也是为什么早期的synchronized效率低的原因。</li>
 </ul></li>
 </ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>java 线程池实现，拒绝策略</strong></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>现实工作中什么场景使用过多线程？简单介绍一个线程池</strong>
-newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <strong>java 线程池实现</strong>
+
+<ul>
+<li><strong>构造函数参数</strong>：
+
+<ul>
+<li>corePoolSize(基本线程数)：初始化和在没有任务执行时线程池的大小，只有在工作队列满了的情况下才会创建超出这个数量的线程；</li>
+<li>maximumPoolSize(最大线程数)：可同时活动的线程数的上限；</li>
+<li>keepAliveTime(线程空闲时间)：如果某个线程的空闲时间超过存活时间，那么将被标记为可回收的，并且当线程池的当前大小超过了基本大小时，这个线程将被终止。</li>
+<li>unit(时间单位)</li>
+<li>workQueue(任务队列)</li>
+<li>threadFactory(线程工厂)</li>
+<li>rejectedExecutionHandler(饱和策略)</li>
+</ul></li>
+<li>可通过Executors提供的newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool、newSingleThreadExecutor等静态方法来构建线程池，这些方法部分内部是使用new ThreadPoolExecutor()来构建的;
+
+<ul>
+<li>newFixedThreadPool：将线程池的基本大小和最大大小设置为参数中指定的值，而且创建的线程池不会超时;</li>
+<li>newCachedThreadPool：将线程池的最大大小设置为Integer.MAX_VALUE，而将基本大小设置为0，并将超时设置为1分钟，这种方法创建出来的线程池可以被无限扩展，并且当需求降低时会自动收缩，禁止使用此方法，避免线程池大小超出控制范围;</li>
+<li>newScheduledThreadPool：</li>
+</ul></li>
+<li>任务队列
+
+<ul>
+<li>提供一个BlockingQueue来保存等待执行的任务。基本的任务排队方式有三种：无界队列、有界队列和同步移交。</li>
+<li>有界队列可避免资源耗尽，但是如果队列被填满则需要使用饱和策略来解决这个问题；队列大小和线程池大小必须一起调节，如果线程池较小而队列较大，那么有助于减少内存使用量，降低CPU使用率，同时还可以减少上下文切换，但会限制吞吐量。</li>
+<li>无界队列适用于newFixedThreadPool、newSingleThreadExecutor的场景。</li>
+<li>同步移交：对于非常大或无界的线程池或当线程池可以拒绝任务时，如newCachedThreadPool，可使用SynchronousQueue来避免任务排队，直接将任务从生产者移交给工作者线程。它不是一个真正的队列，而是一种线程之间进行移交的机制。要将一个元素放入SynchronousQueue中，必须有另一个线程正在等待接受这个元素。</li>
+<li>有界队列：ArrayBlockingQueue、LinkedBlockingQueue、PriorityBlockingQueue</li>
+</ul></li>
+<li><strong>饱和策略</strong>
+
+<ul>
+<li>AbortPolicy：默认策略，会抛出未检查的RejectExecutionException。调用方可捕获这个异常，再编写对应的处理代码</li>
+<li>DiscardPolicy：抛弃当前处理的任务</li>
+<li>DiscardOldestPolicy：抛弃队列中最前面的一个任务，然后尝试重新提交当前任务</li>
+<li>CallerRunsPolicy：将任务回退到调用者，从而降低新任务的流量。它不会在线程池的某个线程中执行新提交的任务，而是在一个调用了execute的线程中执行该任务。由于执行任务需要一定的时间，因此主线程至少在一段时间内不能提交任务，从而使工作者线程有时间来处理完正在执行的任务。在这个期间，主线程不会调用accept，因此到达的请求将被保存在TCP层的队列中而不是在应用程序队列中。如果持续过载，那么TCP层将被最终发现他的请求队列被填满，因此同样会开始抛弃请求。这种逐渐向外蔓延的过载情况会让服务器在高负载的情况下实现一种平缓的性能降低。</li>
+</ul></li>
+<li><strong>执行过程</strong>：</li>
+</ul></label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>什么是守护线程，守护线程(Daemon Thread)和非守护线程(User Thread)的区别以及用法</strong>
  <br/>守护线程可以在new Thread()后，通过thread.setDaemon(true)设置，这个方法必须在start()之前设置，不然会报错。比较常见的守护线程就是GC线程，当虚拟机退出时会等待非守护线程关闭，而不会等待守护线程关闭才退出。一般用户线程是执行日常工作的，而守护线程用来给其他用户线程提供辅助服务的。</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>synchronized和volatile的作用</strong>
@@ -250,9 +287,14 @@ volatile能禁止指令重新排序，JMM会在写入这个字段后插入一个
 <li>3. 获取时，直接找到hash值对应的下标，在进一步判断key是否相同，从而找到对应值。</li>
 <li>4. 理解了以上过程就不难明白HashMap是如何解决hash冲突的问题，核心就是使用了数组的存储方式，然后将冲突的key的对象放入链表中，一旦发现冲突就在链表中做进一步的对比。</li>
 </ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>HashMap与HashTable的区别？</strong>
+<li><label><input type="checkbox" disabled class="task-list-item"> <strong>HashMap的一些问题</strong>
 
 <ul>
+<li>什么时候会rehash</li>
+<li>在高并发场景中为什么会出现死循环</li>
+<li>JDK1.8对HashMap做了哪些性能优化</li>
+<li>和ConcurrentHashMap的区别</li>
+<li>HashMap与HashTable的区别？</li>
 <li>1. HashMap是非线程安全的，HashTable是线程安全的。</li>
 <li>2. HashMap的键和值都允许有null值存在，而HashTable则不行。 3、因为线程安全的问题，HashMap效率比HashTable的要高。</li>
 </ul></label></li>
@@ -295,9 +337,15 @@ Java7编译器进行了优化，String比较的原理是先使用hashCode判断�
 <ul>
 <li>用于保存某个线程共享变量：对于同一个static ThreadLocal，不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。</li>
 </ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>ConncurrentHashmap的实现</strong></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>ConcurrentHashmap的锁是如何加的？是不是分段越多越好?</strong></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>Concurrenhashmap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理</strong></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <strong>ConncurrentHashMap的实现</strong></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <strong>ConcurrentHashMap的问题</strong>
+
+<ul>
+<li>ConcurrentHashMap的锁是如何加的？是不是分段越多越好?</li>
+<li>ConcurrentHashMap和LinkedHashMap有什么区别</li>
+<li>为什么ConcurrentHashMap中的链表转红黑树的阈值是8</li>
+<li>ConcurrenhashMap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理</li>
+</ul></label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> <strong>并发队列ConcurrentLinkedQueue和阻塞队列LinkedBlockingQueue用法</strong></label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> <strong>J.U.C下列类的实现，AQS</strong></label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> <strong>读写锁</strong></label></li>

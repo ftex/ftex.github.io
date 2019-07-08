@@ -148,7 +148,7 @@ public class BSearch {
 &lt;li&gt;通过上述两个角度我们可以看出对内存中数据的读取，我们需要解决数据的可见性和执行的顺序性，java提供了&lt;code&gt;volatile&lt;/code&gt;和&lt;code&gt;synchronized&lt;/code&gt;这两个关键字来解决这些问题。&lt;code&gt;volatile&lt;/code&gt;关键字基于CPU内存屏障指令实现，保证一个线程对变量的写入可以对其他线程可见。&lt;code&gt;synchronized&lt;/code&gt;代码块可以保证同一时刻只能有一个线程进入代码的竞争区，也能保证&lt;code&gt;volatile&lt;/code&gt;的可见性，当线程退出代码块时，对变量的更新将会flush到主存中，不管这些变量是不是volatile类型的。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Thread方法的使用&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Thread方法的使用&lt;/strong&gt;
  线程的状态从创建到最终的消亡分为：new(创建)、runnable(就绪)、running(运行)、blocked(阻塞)、time waiting、waiting、dead(消亡)，thread的主要方法：
 
 &lt;ul&gt;
@@ -156,12 +156,12 @@ public class BSearch {
 &lt;li&gt;run()：执行具体任务的代码逻辑；&lt;/li&gt;
 &lt;li&gt;sleep()：让线程睡眠，交出CPU，让CPU执行其他任务，但是不会释放当前线程持有的对象锁；&lt;/li&gt;
 &lt;li&gt;yield()：让出当前线程的CPU使用权给拥有相同优先级的线程执行任务，和slee()不同的是不能控制具体的交出CPU的时间，和sleep()一样不会释放当前线程持有的对象锁；&lt;/li&gt;
-&lt;li&gt;join()：底层调用的是Object的wait()，wait()方法会让线程进入阻塞状态，并且释放占有的锁，并交出CPU执行权限，&lt;/li&gt;
-&lt;li&gt;interrupt()&lt;/li&gt;
-&lt;li&gt;stop()&lt;/li&gt;
-&lt;li&gt;destroy()&lt;/li&gt;
+&lt;li&gt;join()：join方法的作用是父线程等待子线程执行完成后再执行，换句话说就是将异步执行的线程合并为同步的线程。底层调用的是Object的wait()，wait()方法会让线程进入阻塞状态，并且释放占有的锁，并交出CPU执行权限，&lt;/li&gt;
+&lt;li&gt;interrupt():使处于阻塞的线程抛出InterruptedException，以达到线程中断的效果，但是线程如果未阻塞而是正在运行中，则需要配合通过while(!isInterrupted() &amp;amp;&amp;amp; 业务条件限制 ){ doSomething();}的方式来中断正在运行的线程。&lt;/li&gt;
+&lt;li&gt;stop()：这是一个废弃的方法，它是一个不安全的方法。因为调用stop方法会直接终止run方法的调用，并且会抛出一个ThreadDeath错误，如果线程持有某个对象锁的话，会完全释放锁，导致对象状态不一致。所以stop方法基本是不会被用到的。&lt;/li&gt;
+&lt;li&gt;destroy()：destroy方法也是废弃的方法。基本不会被使用到。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized原理&lt;/strong&gt;
 
 &lt;ul&gt;
 &lt;li&gt;每个对象都存在着一个&lt;code&gt;monitor&lt;/code&gt;与之关联，对象与其&lt;code&gt;monitor&lt;/code&gt;之间的关系有存在多种实现方式，如&lt;code&gt;monitor&lt;/code&gt;可以与对象一起创建销毁或当线程试图获取对象锁时自动生成，但当一个&lt;code&gt;monitor&lt;/code&gt;被某个线程持有后，它便处于锁定状态。在Java虚拟机(HotSpot)中，&lt;code&gt;monitor&lt;/code&gt;是由&lt;code&gt;ObjectMonitor&lt;/code&gt;实现的，&lt;code&gt;ObjectMonitor&lt;/code&gt;中有两个队列，&lt;code&gt;_WaitSet&lt;/code&gt;和&lt;code&gt;_EntryList&lt;/code&gt;，用来保存&lt;code&gt;ObjectWaiter对象&lt;/code&gt;列表( 每个等待锁的线程都会被封装成ObjectWaiter对象)，&lt;code&gt;_owner&lt;/code&gt;指向持有&lt;code&gt;ObjectMonitor对象&lt;/code&gt;的线程，当多个线程同时访问一段同步代码时，首先会进入&lt;code&gt;_EntryList&lt;/code&gt;集合，当线程获取到对象的&lt;code&gt;monitor&lt;/code&gt;后进入&lt;code&gt;_Owner区域&lt;/code&gt;并把&lt;code&gt;monitor&lt;/code&gt;中的&lt;code&gt;owner变量&lt;/code&gt;设置为当前线程同时&lt;code&gt;monitor&lt;/code&gt;中的计数器count加1，若线程调用 wait() 方法，将释放当前持有的&lt;code&gt;monitor&lt;/code&gt;，&lt;code&gt;owner变量&lt;/code&gt;恢复为null，count自减1，同时该线程进入&lt;code&gt;WaitSet集合&lt;/code&gt;中等待被唤醒。若当前线程执行完毕也将释放&lt;code&gt;monitor(锁)&lt;/code&gt;并复位变量的值，以便其他线程进入获取&lt;code&gt;monitor(锁)&lt;/code&gt;。&lt;/li&gt;
@@ -175,9 +175,46 @@ public class BSearch {
 &lt;li&gt;&lt;strong&gt;重量级锁&lt;/strong&gt;：即监视器锁(monitor)，因为它是依赖于底层的操作系统的&lt;code&gt;Mutex Lock&lt;/code&gt;来实现的，而操作系统实现线程之间的切换时需要从用户态转换到核心态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，这也是为什么早期的synchronized效率低的原因。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java 线程池实现，拒绝策略&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;现实工作中什么场景使用过多线程？简单介绍一个线程池&lt;/strong&gt;
-newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java 线程池实现&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;构造函数参数&lt;/strong&gt;：
+
+&lt;ul&gt;
+&lt;li&gt;corePoolSize(基本线程数)：初始化和在没有任务执行时线程池的大小，只有在工作队列满了的情况下才会创建超出这个数量的线程；&lt;/li&gt;
+&lt;li&gt;maximumPoolSize(最大线程数)：可同时活动的线程数的上限；&lt;/li&gt;
+&lt;li&gt;keepAliveTime(线程空闲时间)：如果某个线程的空闲时间超过存活时间，那么将被标记为可回收的，并且当线程池的当前大小超过了基本大小时，这个线程将被终止。&lt;/li&gt;
+&lt;li&gt;unit(时间单位)&lt;/li&gt;
+&lt;li&gt;workQueue(任务队列)&lt;/li&gt;
+&lt;li&gt;threadFactory(线程工厂)&lt;/li&gt;
+&lt;li&gt;rejectedExecutionHandler(饱和策略)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;可通过Executors提供的newCachedThreadPool、newFixedThreadPool、newScheduledThreadPool、newSingleThreadExecutor等静态方法来构建线程池，这些方法部分内部是使用new ThreadPoolExecutor()来构建的;
+
+&lt;ul&gt;
+&lt;li&gt;newFixedThreadPool：将线程池的基本大小和最大大小设置为参数中指定的值，而且创建的线程池不会超时;&lt;/li&gt;
+&lt;li&gt;newCachedThreadPool：将线程池的最大大小设置为Integer.MAX_VALUE，而将基本大小设置为0，并将超时设置为1分钟，这种方法创建出来的线程池可以被无限扩展，并且当需求降低时会自动收缩，禁止使用此方法，避免线程池大小超出控制范围;&lt;/li&gt;
+&lt;li&gt;newScheduledThreadPool：&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;任务队列
+
+&lt;ul&gt;
+&lt;li&gt;提供一个BlockingQueue来保存等待执行的任务。基本的任务排队方式有三种：无界队列、有界队列和同步移交。&lt;/li&gt;
+&lt;li&gt;有界队列可避免资源耗尽，但是如果队列被填满则需要使用饱和策略来解决这个问题；队列大小和线程池大小必须一起调节，如果线程池较小而队列较大，那么有助于减少内存使用量，降低CPU使用率，同时还可以减少上下文切换，但会限制吞吐量。&lt;/li&gt;
+&lt;li&gt;无界队列适用于newFixedThreadPool、newSingleThreadExecutor的场景。&lt;/li&gt;
+&lt;li&gt;同步移交：对于非常大或无界的线程池或当线程池可以拒绝任务时，如newCachedThreadPool，可使用SynchronousQueue来避免任务排队，直接将任务从生产者移交给工作者线程。它不是一个真正的队列，而是一种线程之间进行移交的机制。要将一个元素放入SynchronousQueue中，必须有另一个线程正在等待接受这个元素。&lt;/li&gt;
+&lt;li&gt;有界队列：ArrayBlockingQueue、LinkedBlockingQueue、PriorityBlockingQueue&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;饱和策略&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AbortPolicy：默认策略，会抛出未检查的RejectExecutionException。调用方可捕获这个异常，再编写对应的处理代码&lt;/li&gt;
+&lt;li&gt;DiscardPolicy：抛弃当前处理的任务&lt;/li&gt;
+&lt;li&gt;DiscardOldestPolicy：抛弃队列中最前面的一个任务，然后尝试重新提交当前任务&lt;/li&gt;
+&lt;li&gt;CallerRunsPolicy：将任务回退到调用者，从而降低新任务的流量。它不会在线程池的某个线程中执行新提交的任务，而是在一个调用了execute的线程中执行该任务。由于执行任务需要一定的时间，因此主线程至少在一段时间内不能提交任务，从而使工作者线程有时间来处理完正在执行的任务。在这个期间，主线程不会调用accept，因此到达的请求将被保存在TCP层的队列中而不是在应用程序队列中。如果持续过载，那么TCP层将被最终发现他的请求队列被填满，因此同样会开始抛弃请求。这种逐渐向外蔓延的过载情况会让服务器在高负载的情况下实现一种平缓的性能降低。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;执行过程&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;什么是守护线程，守护线程(Daemon Thread)和非守护线程(User Thread)的区别以及用法&lt;/strong&gt;
  &lt;br/&gt;守护线程可以在new Thread()后，通过thread.setDaemon(true)设置，这个方法必须在start()之前设置，不然会报错。比较常见的守护线程就是GC线程，当虚拟机退出时会等待非守护线程关闭，而不会等待守护线程关闭才退出。一般用户线程是执行日常工作的，而守护线程用来给其他用户线程提供辅助服务的。&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;synchronized和volatile的作用&lt;/strong&gt;
@@ -259,9 +296,14 @@ volatile能禁止指令重新排序，JMM会在写入这个字段后插入一个
 &lt;li&gt;3. 获取时，直接找到hash值对应的下标，在进一步判断key是否相同，从而找到对应值。&lt;/li&gt;
 &lt;li&gt;4. 理解了以上过程就不难明白HashMap是如何解决hash冲突的问题，核心就是使用了数组的存储方式，然后将冲突的key的对象放入链表中，一旦发现冲突就在链表中做进一步的对比。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;HashMap与HashTable的区别？&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;HashMap的一些问题&lt;/strong&gt;
 
 &lt;ul&gt;
+&lt;li&gt;什么时候会rehash&lt;/li&gt;
+&lt;li&gt;在高并发场景中为什么会出现死循环&lt;/li&gt;
+&lt;li&gt;JDK1.8对HashMap做了哪些性能优化&lt;/li&gt;
+&lt;li&gt;和ConcurrentHashMap的区别&lt;/li&gt;
+&lt;li&gt;HashMap与HashTable的区别？&lt;/li&gt;
 &lt;li&gt;1. HashMap是非线程安全的，HashTable是线程安全的。&lt;/li&gt;
 &lt;li&gt;2. HashMap的键和值都允许有null值存在，而HashTable则不行。 3、因为线程安全的问题，HashMap效率比HashTable的要高。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
@@ -304,9 +346,15 @@ Java7编译器进行了优化，String比较的原理是先使用hashCode判断�
 &lt;ul&gt;
 &lt;li&gt;用于保存某个线程共享变量：对于同一个static ThreadLocal，不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConncurrentHashmap的实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConcurrentHashmap的锁是如何加的？是不是分段越多越好?&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Concurrenhashmap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConncurrentHashMap的实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConcurrentHashMap的问题&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ConcurrentHashMap的锁是如何加的？是不是分段越多越好?&lt;/li&gt;
+&lt;li&gt;ConcurrentHashMap和LinkedHashMap有什么区别&lt;/li&gt;
+&lt;li&gt;为什么ConcurrentHashMap中的链表转红黑树的阈值是8&lt;/li&gt;
+&lt;li&gt;ConcurrenhashMap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;并发队列ConcurrentLinkedQueue和阻塞队列LinkedBlockingQueue用法&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;J.U.C下列类的实现，AQS&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;读写锁&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
