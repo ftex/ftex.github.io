@@ -57,7 +57,7 @@
     "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
     "dateModified" : "0001-01-01 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/ftex.github.io\/java_review\/",
-    "wordCount" : "898",
+    "wordCount" : "941",
     "keywords" : [  "飞雷神"]
 }
 </script>
@@ -277,43 +277,65 @@ volatile能禁止指令重新排序，JMM会在写入这个字段后插入一个
 <a href="https://www.cnblogs.com/shanheyongmu/p/9583381.html" rel="nofollow noreferrer" target="_blank">https://www.cnblogs.com/shanheyongmu/p/9583381.html</a></li>
 </ul></li>
 </ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>如果碰到多重循环需要跳出该如何操作？</strong>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>如果碰到多重循环需要跳出该如何操作？</strong>
   <br/>可以使用循环标签，即在循环关键字前加上一个标签名及冒号，在需要跳出的地方（ break ${labelName} 或 continue ${labelName} ）进行跳出。</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>HashMap的实现原理</strong>
+<li><label><input type="checkbox" disabled class="task-list-item"> <strong>HashMap的实现原理</strong> <a href="https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" rel="nofollow noreferrer" target="_blank">链接</a><br />
+<img src="https://awps-assets.meituan.net/mit-x/blog-images-bundle-2016/d669d29c.png" alt="" /></label></li>
+</ul>
 
-<ul>
+<pre><code class="language-java">public V put(K key, V value) {
+        return putVal(hash(key), key, value, false, true);
+ }
+static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16);
+}
+</code></pre>
+
+<ul class="task-list">
 <li>1. 利用key的hashCode重新hash计算出当前对象的元素在数组中的下标</li>
 <li>2. 存储时，如果出现hash值相同的key，此时有两种情况。(1)如果key相同，则覆盖原始值；(2)如果key不同（出现冲突），则将当前的key-value放入链表中</li>
 <li>3. 获取时，直接找到hash值对应的下标，在进一步判断key是否相同，从而找到对应值。</li>
 <li>4. 理解了以上过程就不难明白HashMap是如何解决hash冲突的问题，核心就是使用了数组的存储方式，然后将冲突的key的对象放入链表中，一旦发现冲突就在链表中做进一步的对比。</li>
-</ul></label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> <strong>HashMap的一些问题</strong>
 
 <ul>
+<li>为什么链表长度为8时会变更链表为红黑树，当红黑树节点缩减为6时又自动变更成链表结构
+
+<ul>
+<li>因为链表的时间复杂度是O(n)，红黑树的时间复杂度是O(logn)，红黑树的空间复杂度是链表的2倍，选择数据结构时，需要权衡时间空间复杂度。官方文档中给出一个概率：hashmap中一个链表的长度为8的概率是0.00000006，几乎不可能出现的事件，而且长度为8的链表的时间复杂度要比红黑树高，小于8时两者的时间复杂度基本相同，所以长度为8时变更链表为红黑树。从红黑树变更成链表的长度是6而不是7的原因是因为避免链表红黑树频繁切换。详见<a href="https://www.javazhiyin.com/34651.html" rel="nofollow noreferrer" target="_blank">链接</a> ,<a href="https://albenw.github.io/posts/df45eaf1/" rel="nofollow noreferrer" target="_blank">链接2</a></li>
+</ul></li>
 <li>什么时候会rehash</li>
-<li>在高并发场景中为什么会出现死循环</li>
+<li>在高并发场景中为什么会出现死循环
+
+<ul>
+<li><a href="https://juejin.im/post/5a224e1551882535c56cb940" rel="nofollow noreferrer" target="_blank">链接</a> 、<a href="https://juejin.im/post/5a66a08d5188253dc3321da0" rel="nofollow noreferrer" target="_blank">链接</a></li>
+</ul></li>
 <li>JDK1.8对HashMap做了哪些性能优化</li>
 <li>和ConcurrentHashMap的区别</li>
-<li>HashMap与HashTable的区别？</li>
+<li>HashMap与HashTable的区别？
+
+<ul>
 <li>1. HashMap是非线程安全的，HashTable是线程安全的。</li>
 <li>2. HashMap的键和值都允许有null值存在，而HashTable则不行。 3、因为线程安全的问题，HashMap效率比HashTable的要高。</li>
+</ul></li>
 </ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>进程和线程的区别与联系？</strong>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>进程和线程的区别与联系？</strong>
 <br/> 进程：每个进程都有独立的代码和数据空间（进程上下文），进程间的切换会有较大的开销，一个进程包含1–n个线程。
 线程：同一类线程共享代码和数据空间，每个线程有独立的运行栈和程序计数器(PC)，线程切换开销小。
 <br/> 线程和进程一样分为五个阶段：创建、就绪、运行、阻塞、终止。</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>在java中要想实现多线程，有几种方法？</strong>
-<br/> 一种是继续Thread类，另外一种是实现Runable接口，还有就是实现Callable接口。</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>switch能否用string做参数？</strong>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>在java中要想实现多线程，有几种方法？</strong>
+<br/> 继续Thread类、实现Runable接口或实现Callable接口。</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>switch能否用string做参数？</strong>
 <br/> 在 Java 7 之前, switch 只能支持byte,short,char,int 或者其对应的封装类以及 Enum 类型。在Java 7中,String 支持被加上了。
 Java7编译器进行了优化，String比较的原理是先使用hashCode判断，再通过equals判断值是否相等。</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>Object有哪些公用方法？</strong>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>Object有哪些公用方法？</strong>
 
 <ul>
 <li>1. 方法equals测试的是两个对象是否相等</li>
 <li>2. 方法clone进行对象拷贝</li>
 <li>3. 方法getClass返回和当前对象相关的Class对象</li>
-<li>4. 方法notify,notifyall,wait都是用来对给定对象进行线程同步的</li>
+<li>4. 方法notify,notifyAll,wait都是用来对给定对象进行线程同步的</li>
 </ul></label></li>
 <li><label><input type="checkbox" disabled class="task-list-item"> <strong>Java的四种引用以及应用场景？</strong>
 
