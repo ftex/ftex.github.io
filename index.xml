@@ -128,6 +128,10 @@ public class BSearch {
       <guid>https://ftex.github.io/java_review/</guid>
       <description>
 
+&lt;h3 id=&#34;java总结&#34;&gt;java总结&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/crossoverJie/JCSprout&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;JCSprout&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;多线程&#34;&gt;多线程&lt;/h3&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
@@ -175,7 +179,7 @@ public class BSearch {
 &lt;li&gt;&lt;strong&gt;重量级锁&lt;/strong&gt;：即监视器锁(monitor)，因为它是依赖于底层的操作系统的&lt;code&gt;Mutex Lock&lt;/code&gt;来实现的，而操作系统实现线程之间的切换时需要从用户态转换到核心态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高，这也是为什么早期的synchronized效率低的原因。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java 线程池实现&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;java 线程池实现&lt;/strong&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;构造函数参数&lt;/strong&gt;：
@@ -252,8 +256,8 @@ volatile能禁止指令重新排序，JMM会在写入这个字段后插入一个
 
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.importnew.com/21463.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.importnew.com/21463.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://www.cnblogs.com/gw811/archive/2012/10/18/2730117.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.cnblogs.com/gw811/archive/2012/10/18/2730117.html&lt;/a&gt; (java内存管理)&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&lt;/a&gt; (java内存管理机制)&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://www.cnblogs.com/gw811/archive/2012/10/18/2730117.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;java内存管理&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://blog.csdn.net/tutngfei1129287460/article/details/7383480&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;java内存管理机制&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; java堆和栈
 
@@ -262,7 +266,12 @@ volatile能禁止指令重新排序，JMM会在写入这个字段后插入一个
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://www.cnblogs.com/whgw/archive/2011/09/29/2194997.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://www.cnblogs.com/whgw/archive/2011/09/29/2194997.html&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 垃圾回收机制&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 垃圾回收机制
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://albk.tech/JVM%E7%AF%87-%E4%B9%8B-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;垃圾收集器&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://matt33.com/2018/07/28/jvm-cms/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;ParNew 和 CMS 日志分析&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 逃逸分析&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; 简单介绍下JVM各种参数及调优&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -289,7 +298,14 @@ volatile能禁止指令重新排序，JMM会在写入这个字段后插入一个
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;如果碰到多重循环需要跳出该如何操作？&lt;/strong&gt;
   &lt;br/&gt;可以使用循环标签，即在循环关键字前加上一个标签名及冒号，在需要跳出的地方（ break ${labelName} 或 continue ${labelName} ）进行跳出。&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;HashMap的实现原理&lt;/strong&gt; &lt;a href=&#34;https://yikun.github.io/2015/04/01/Java-HashMap%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt;&lt;br /&gt;
-&lt;img src=&#34;https://awps-assets.meituan.net/mit-x/blog-images-bundle-2016/d669d29c.png&#34; alt=&#34;&#34; /&gt;&lt;/label&gt;&lt;/li&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 利用key的hashCode重新hash计算出当前对象的元素在数组中的下标&lt;/li&gt;
+&lt;li&gt;2. 存储时，如果出现hash值相同的key，此时有两种情况。(1)如果key相同，则覆盖原始值；(2)如果key不同（出现冲突），则将当前的key-value放入链表中&lt;/li&gt;
+&lt;li&gt;3. 获取时，直接找到hash值对应的下标，在进一步判断key是否相同，从而找到对应值。&lt;/li&gt;
+&lt;li&gt;4. 理解了以上过程就不难明白HashMap是如何解决hash冲突的问题，核心就是使用了数组的存储方式，然后将冲突的key的对象放入链表中，一旦发现冲突就在链表中做进一步的对比。
+&lt;img src=&#34;https://awps-assets.meituan.net/mit-x/blog-images-bundle-2016/d669d29c.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public V put(K key, V value) {
@@ -302,11 +318,7 @@ static final int hash(Object key) {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;1. 利用key的hashCode重新hash计算出当前对象的元素在数组中的下标&lt;/li&gt;
-&lt;li&gt;2. 存储时，如果出现hash值相同的key，此时有两种情况。(1)如果key相同，则覆盖原始值；(2)如果key不同（出现冲突），则将当前的key-value放入链表中&lt;/li&gt;
-&lt;li&gt;3. 获取时，直接找到hash值对应的下标，在进一步判断key是否相同，从而找到对应值。&lt;/li&gt;
-&lt;li&gt;4. 理解了以上过程就不难明白HashMap是如何解决hash冲突的问题，核心就是使用了数组的存储方式，然后将冲突的key的对象放入链表中，一旦发现冲突就在链表中做进一步的对比。&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;HashMap的一些问题&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;HashMap的一些问题&lt;/strong&gt;
 
 &lt;ul&gt;
 &lt;li&gt;为什么链表长度为8时会变更链表为红黑树，当红黑树节点缩减为6时又自动变更成链表结构
@@ -314,13 +326,15 @@ static final int hash(Object key) {
 &lt;ul&gt;
 &lt;li&gt;因为链表的时间复杂度是O(n)，红黑树的时间复杂度是O(logn)，红黑树的空间复杂度是链表的2倍，选择数据结构时，需要权衡时间空间复杂度。官方文档中给出一个概率：hashmap中一个链表的长度为8的概率是0.00000006，几乎不可能出现的事件，而且长度为8的链表的时间复杂度要比红黑树高，小于8时两者的时间复杂度基本相同，所以长度为8时变更链表为红黑树。从红黑树变更成链表的长度是6而不是7的原因是因为避免链表红黑树频繁切换。详见&lt;a href=&#34;https://www.javazhiyin.com/34651.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt; ,&lt;a href=&#34;https://albenw.github.io/posts/df45eaf1/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;什么时候会rehash&lt;/li&gt;
 &lt;li&gt;在高并发场景中为什么会出现死循环
+&lt;br/&gt;在数组长度不够的情况下，需要申请一个更大内存的数组，分配元素的时候如果存在链表，hashmap中的链表是将元素放置在首节点的，那么重新分配的时候会将链表倒序排列，在并发场景的时候很容易让链表出现环的现象，这样会造成死循环。&lt;a href=&#34;https://juejin.im/post/5a224e1551882535c56cb940&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt; 、&lt;a href=&#34;https://juejin.im/post/5a66a08d5188253dc3321da0&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;JDK1.8对HashMap做了哪些性能优化
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://juejin.im/post/5a224e1551882535c56cb940&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt; 、&lt;a href=&#34;https://juejin.im/post/5a66a08d5188253dc3321da0&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;从数组+链表改成了数组+链表和红黑树；&lt;/li&gt;
+&lt;li&gt;优化了高位运算的hash算法：h^(h&amp;gt;&amp;gt;&amp;gt;16);&lt;/li&gt;
+&lt;li&gt;扩容后，元素要么是在原位置，要么是在原位置再移动2次幂的位置，且链表使用尾插法，避免出现死循环；&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;JDK1.8对HashMap做了哪些性能优化&lt;/li&gt;
 &lt;li&gt;和ConcurrentHashMap的区别&lt;/li&gt;
 &lt;li&gt;HashMap与HashTable的区别？
 
@@ -330,14 +344,23 @@ static final int hash(Object key) {
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;进程和线程的区别与联系？&lt;/strong&gt;
-&lt;br/&gt; 进程：每个进程都有独立的代码和数据空间（进程上下文），进程间的切换会有较大的开销，一个进程包含1–n个线程。
-线程：同一类线程共享代码和数据空间，每个线程有独立的运行栈和程序计数器(PC)，线程切换开销小。
-&lt;br/&gt; 线程和进程一样分为五个阶段：创建、就绪、运行、阻塞、终止。&lt;/label&gt;&lt;/li&gt;
+
+&lt;ul&gt;
+&lt;li&gt;进程：每个进程都有独立的代码和数据空间（进程上下文），进程间的切换会有较大的开销，一个进程包含1–n个线程。
+线程：同一类线程共享代码和数据空间，每个线程有独立的运行栈和程序计数器(PC)，线程切换开销小。&lt;/li&gt;
+&lt;li&gt;线程和进程一样分为五个阶段：创建、就绪、运行、阻塞、终止。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;在java中要想实现多线程，有几种方法？&lt;/strong&gt;
-&lt;br/&gt; 继续Thread类、实现Runable接口或实现Callable接口。&lt;/label&gt;&lt;/li&gt;
+
+&lt;ul&gt;
+&lt;li&gt;继续Thread类、实现Runable接口或实现Callable接口。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;switch能否用string做参数？&lt;/strong&gt;
-&lt;br/&gt; 在 Java 7 之前, switch 只能支持byte,short,char,int 或者其对应的封装类以及 Enum 类型。在Java 7中,String 支持被加上了。
-Java7编译器进行了优化，String比较的原理是先使用hashCode判断，再通过equals判断值是否相等。&lt;/label&gt;&lt;/li&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在 Java 7 之前, switch 只能支持byte,short,char,int 或者其对应的封装类以及 Enum 类型。在Java 7中,String 支持被加上了。
+Java7编译器进行了优化，String比较的原理是先使用hashCode判断，再通过equals判断值是否相等。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Object有哪些公用方法？&lt;/strong&gt;
 
 &lt;ul&gt;
@@ -346,15 +369,15 @@ Java7编译器进行了优化，String比较的原理是先使用hashCode判断�
 &lt;li&gt;3. 方法getClass返回和当前对象相关的Class对象&lt;/li&gt;
 &lt;li&gt;4. 方法notify,notifyAll,wait都是用来对给定对象进行线程同步的&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Java的四种引用以及应用场景？&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;Java的四种引用以及应用场景？&lt;/strong&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;强引用&lt;/strong&gt;：如果一个对象具有强引用，它就不会被垃圾回收器回收。即使当前内存空间不足，JVM也不会回收它，而是抛出 OutOfMemoryError 错误，使程序异常终止。如果想中断强引用和某个对象之间的关联，可以显式地将引用赋值为null，这样一来的话，JVM在合适的时间就会回收该对象。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;软引用&lt;/strong&gt;：在使用软引用时，如果内存的空间足够，软引用就能继续被使用，而不会被垃圾回收器回收，只有在内存不足时，软引用才会被垃圾回收器回收。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;弱引用&lt;/strong&gt;：具有弱引用的对象拥有的生命周期更短暂。因为当 JVM 进行垃圾回收，一旦发现弱引用对象，无论当前内存空间是否充足，都会将弱引用回收。不过由于垃圾回收器是一个优先级较低的线程，所以并不一定能迅速发现弱引用对象。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;虚引用&lt;/strong&gt;：顾名思义，就是形同虚设，如果一个对象仅持有虚引用，那么它相当于没有引用，在任何时候都可能被垃圾回收器回收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;软引用(SoftReference)&lt;/strong&gt;：在使用软引用时，如果内存的空间足够，软引用就能继续被使用，而不会被垃圾回收器回收，只有在内存不足时，软引用才会被垃圾回收器回收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;弱引用(WeakReference)&lt;/strong&gt;：具有弱引用的对象拥有的生命周期更短暂。因为当 JVM 进行垃圾回收，一旦发现弱引用对象，无论当前内存空间是否充足，都会将弱引用回收。不过由于垃圾回收器是一个优先级较低的线程，所以并不一定能迅速发现弱引用对象。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;虚引用(PhantomReference)&lt;/strong&gt;：顾名思义，就是形同虚设，如果一个对象仅持有虚引用，那么它相当于没有引用，在任何时候都可能被垃圾回收器回收。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;抽象类和接口的区别？&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;抽象类和接口的区别？&lt;/strong&gt;
 
 &lt;ul&gt;
 &lt;li&gt;一个类只能继承单个类，但是可以实现多个接口&lt;/li&gt;
@@ -363,19 +386,35 @@ Java7编译器进行了优化，String比较的原理是先使用hashCode判断�
 &lt;li&gt;抽象类中可以包含静态方法，接口中不可以&lt;/li&gt;
 &lt;li&gt;抽象类中可以有普通成员变量，接口中不可以&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ThreadLocal&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ThreadLocal&lt;/strong&gt;
 
 &lt;ul&gt;
+&lt;li&gt;每个Thread都存储了一个ThreadLocalMap，当ThreadLocal.get()的时候实际上是通过System.currentThread().threadLocals.getEntry(this)来获取对应值的，其中的this是ThreadLocal的实例。ThreadLocalMap中的entry继承自WeakReference(弱引用)，当entry的key，也就是threadlocal使用完成的时候，系统就会回收这部分内存。&lt;/li&gt;
 &lt;li&gt;用于保存某个线程共享变量：对于同一个static ThreadLocal，不同线程只能从中get，set，remove自己的变量，而不会影响其他线程的变量。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConncurrentHashMap的实现&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConcurrentHashMap的问题&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConncurrentHashMap的实现&lt;/strong&gt; &lt;a href=&#34;https://www.jianshu.com/p/d10256f0ebea&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;link1&lt;/a&gt;   &lt;a href=&#34;http://www.jasongj.com/java/concurrenthashmap/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;link2&lt;/a&gt;
 
 &lt;ul&gt;
-&lt;li&gt;ConcurrentHashMap的锁是如何加的？是不是分段越多越好?&lt;/li&gt;
-&lt;li&gt;ConcurrentHashMap和LinkedHashMap有什么区别&lt;/li&gt;
-&lt;li&gt;为什么ConcurrentHashMap中的链表转红黑树的阈值是8&lt;/li&gt;
-&lt;li&gt;ConcurrenhashMap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理&lt;/li&gt;
+&lt;li&gt;1.7使用的是分段锁机制，1.8使用的是和hashmap类似的数据结构：数组+链表和红黑树，在数据插入的时候如果当前node没有值则使用cas插入元素，如果有值则使用synchronized锁定链表头结点，再插入元素，链表长度超过8则转化为红黑树。&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ConcurrentHashMap的问题&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ConcurrentHashMap的锁是如何加的？是不是分段越多越好?
+
+&lt;ul&gt;
+&lt;li&gt;不是，锁分段是和hardware thread数量相关的，也可以认为是和系统最大cpu并发数相关的。1.8不再使用锁分段技术，而是使用数组+链表或红黑树的方式实现。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;为什么ConcurrentHashMap中的链表转红黑树的阈值是8
+
+&lt;ul&gt;
+&lt;li&gt;和HashMap的答案一样，见上文。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ConcurrenhashMap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理
+
+&lt;ul&gt;
+&lt;li&gt;求size()最好的情况当然是把所有元素全部锁住，不允许任何变更，但为更好支持并发操作，ConcurrentHashMap会在不上锁的前提逐个Segment计算3次size，如果某相邻两次计算获取的所有Segment的更新次数（每个Segment都与HashMap一样通过modCount跟踪自己的修改次数，Segment每修改一次其modCount加一）相等，说明这两次计算过程中无更新操作，则这两次计算出的总size相等，可直接作为最终结果返回。如果这三次计算过程中Map有更新，则对所有Segment加锁重新计算Size。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;并发队列ConcurrentLinkedQueue和阻塞队列LinkedBlockingQueue用法&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;J.U.C下列类的实现，AQS&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
@@ -450,7 +489,7 @@ Java7编译器进行了优化，String比较的原理是先使用hashCode判断�
 
 &lt;ul class=&#34;task-list&#34;&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;1.Spring的注入bean的方式&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;2.SpringMVC运行原理？&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;2.SpringMVC运行原理？&lt;/strong&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1. 客户端请求提交到DispatcherServlet；&lt;/li&gt;
@@ -459,13 +498,7 @@ Java7编译器进行了优化，String比较的原理是先使用hashCode判断�
 &lt;li&gt;4. DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图；&lt;/li&gt;
 &lt;li&gt;5. 视图负责将结果显示到客户端。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;3.Spring IOC （控制反转，依赖注入）？&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Spring支持三种依赖注入方式，分别是属性（Setter方法）注入，构造注入和接口注入。&lt;/li&gt;
-&lt;li&gt;Spring的IOC容器通过反射的机制实例化Bean并建立Bean之间的依赖关系。&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;4.Spring Bean的作用域？&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;4.Spring Bean的作用域？&lt;/strong&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Singleton：Spring IOC容器中只有一个共享的Bean实例，一般都是Singleton作用域。&lt;/li&gt;
@@ -484,21 +517,12 @@ Spring IOC容器对Bean的生命周期进行管理的过程如下：
 &lt;li&gt;5. 当容器关闭时，调用Bean的销毁方法&lt;/li&gt;
 &lt;li&gt;6. 在 Bean 的声明里设置 init-method 和 destroy-method 属性, 为 Bean 指定初始化和销毁方法。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;5.Spring的基本框架主要包含哪些模块？&lt;/strong&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;6.Spring AOP&lt;/strong&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Spring DAO：Spring提供了对JDBC的操作支持：JdbcTemplate模板工具类 。&lt;/li&gt;
-&lt;li&gt;Spring ORM：Spring可以与ORM框架整合。例如Spring整合Hibernate框架，其中Spring还提供HibernateDaoSupport工具类，简化了Hibernate的操作 。&lt;/li&gt;
-&lt;li&gt;Spring WEB：Spring提供了对Struts、Springmvc的支持，支持WEB开发。与此同时Spring自身也提供了基于MVC的解决方案 。&lt;/li&gt;
-&lt;li&gt;Spring AOP：Spring提供面向切面的编程，可以给某一层提供事务管理，例如在Service层添加事物控制 。&lt;/li&gt;
-&lt;li&gt;Spring JEE：J2EE开发规范的支持，例如EJB 。&lt;/li&gt;
-&lt;li&gt;Spring Core：提供IOC容器对象的创建和处理依赖对象关系 。&lt;/li&gt;
-&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;6.Spring AOP？&lt;/strong&gt;
-
-&lt;ul&gt;
-&lt;li&gt;JDK动态代理：调用者实际调用的则是代理类的方法，通过这种方式我们就可以在代理类中织入切面逻辑；&lt;/li&gt;
-&lt;li&gt;Cglib：通过为目标类动态生成一个子类，通过在子类中织入相应逻辑来达到织入代理逻辑的目的&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/luanlouis/article/details/51155821&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;AOP实现原理&lt;/a&gt;、&lt;a href=&#34;https://blog.csdn.net/luanlouis/article/details/51095702&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;AOP设计基本原理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;JDK动态代理：仅可以通过接口代理，代理类需要实现InvocationHandler接口，实现invoke方法，在这个方法中编写代理内容，再通过Proxy.newProxyInstance()生成对应实例调用对应方法。&lt;/li&gt;
+&lt;li&gt;Cglib：通过为目标类动态生成一个子类，通过在子类中织入相应逻辑来达到织入代理逻辑的目的。&lt;/li&gt;
 &lt;li&gt;AspectJ:静态织入，它有专门的编译器，在编译期间将Advice以字节码的形式织入到class文件中。&lt;/li&gt;
 &lt;li&gt;Spring AOP&lt;/li&gt;
 &lt;li&gt;切面（Aspect）：其实就是共有功能的实现。如日志切面、权限切面、事务切面等。在实际应用中通常是一个存放共有功能实现的普通Java类，之所以能被AOP容器识别成切面，是在配置中指定的。&lt;/li&gt;
@@ -509,13 +533,10 @@ Spring IOC容器对Bean的生命周期进行管理的过程如下：
 &lt;li&gt;代理对象（Proxy）：将通知应用到目标对象之后被动态创建的对象。可以简单地理解为，代理对象的功能等于目标对象的核心业务逻辑功能加上共有功能。代理对象对于使用者而言是透明的，是程序运行过程中的产物。&lt;/li&gt;
 &lt;li&gt;织入（Weaving）：将切面应用到目标对象从而创建一个新的代理对象的过程。这个过程可以发生在编译期、类装载期及运行期，当然不同的发生点有着不同的前提条件。譬如发生在编译期的话，就要求有一个支持这种AOP实现的特殊编译器；发生在类装载期，就要求有一个支持AOP实现的特殊类装载器；只有发生在运行期，则可直接通过Java语言的反射机制与动态代理机制来动态实现。&lt;/li&gt;
 &lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;7.将一个请求url指向一个类的方法的注解是？&lt;/strong&gt;
-@RequestMapping&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;8.将前台的form中input控件的name属性绑定到控制器类中的方法参数的注解是？&lt;/strong&gt;
-@RequestParam&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;spring事务的实现&lt;/strong&gt;
 &lt;br/&gt; 可以进一步了解下事务的配置，例如7中事务传播行为随机选择一个作介绍&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;IOC实现机制&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;IOC实现机制&lt;/strong&gt;
+&lt;br/&gt;Spring支持三种依赖注入方式，分别是属性（Setter方法）注入，构造注入和接口注入。通过DI（依赖注入）实现，而DI的含义是将依赖关系注入到对应Bean中，实现原理是在spring会先将申明成Bean的实例放入自己的map中，在加载Bean的时候检查对应Bean的名称和类型，如果符合则通过反射注入到对应Bean中。&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;ApplicationContext 和 BeanFactory 的区别？&lt;/strong&gt;
 &lt;br/&gt; 创建 Bean 对象的时机不同：
 
@@ -532,10 +553,17 @@ Spring IOC容器对Bean的生命周期进行管理的过程如下：
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;主从复制；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql的binlog&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql的存储引擎；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql引擎区别；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;myisam的优点，和innodb的区别&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;innodb对一行数据的读会枷锁吗？不枷锁，读实际读的是副本&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;myisam和innodb的区别（innodb是行级锁，myisam是表级锁）&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql引擎区别；&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. InnoDB支持事务，MyISAM不支持，对于InnoDB每一条SQL语言都默认封装成事务，自动提交，这样会影响速度，所以最好把多条SQL语言放在begin和commit之间，组成一个事务；&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;2. InnoDB支持外键，而MyISAM不支持。对一个包含外键的InnoDB表转为MYISAM会失败；&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;3. InnoDB是聚集索引，数据文件是和索引绑在一起的，必须要有主键，通过主键索引效率很高。但是辅助索引需要两次查询，先查询到主键，然后再通过主键查询到数据。因此，主键不应该过大，因为主键太大，其他索引也都会很大。而MyISAM是非聚集索引，数据文件是分离的，索引保存的是数据文件的指针。主键索引和辅助索引是独立的。&lt;/li&gt;
+&lt;li&gt;4. InnoDB不保存表的具体行数，执行select count(*) from table时需要全表扫描。而MyISAM用一个变量保存了整个表的行数，执行上述语句时只需要读出该变量即可，速度很快；&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;5. Innodb不支持全文索引，而MyISAM支持全文索引，查询效率上MyISAM要高；&lt;/li&gt;
+&lt;li&gt;6. innodb是行级锁，myisam是表级锁;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;innodb对一行数据的读会加锁吗？不加锁，读实际读的是副本&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;mysql的默认隔离级别，其他隔离级别；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;求表的size，或做数据统计可用什么存储引擎；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;strong&gt;读多写少可用什么引擎；&lt;/strong&gt;&lt;/label&gt;&lt;/li&gt;
@@ -854,7 +882,14 @@ System.out.println(output.toString());
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; redis能存哪些类型&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; dubbo&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; kafka&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; zk&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Zookeeper
+
+&lt;ul&gt;
+&lt;li&gt;Zookeeper 能够保障分布式场景下数据的一致性、有序性、原子性及可靠性，它的所有写入动作会在 Leader 节点持久化，并在集群过半数节点写入成功才会返回；它也能够支持节点的崩溃恢复以及客户端的最终一致性视图。对于分布式锁场景来说，数据一致性的保障、以及锁服务的容灾保障至关重要。&lt;/li&gt;
+&lt;li&gt;可以作为分布式锁的原因：可以生成临时有序节点，通过water机制关注上一个节点的变化达到公平锁的效果，使用Curator还可以保证锁可重入性; &lt;a href=&#34;https://foreti.me/2019/02/24/zookeeper-distributed-locks/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Zookeeper分布式锁分析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;可以作为注册中心的原因：支持CP，高正数据的一致性；树形结构的目录服务，提供者创建的节点都是临时节点，一旦网络超时或者客户端关闭连接，节点就会删除，zk会将这些变更推送给调用方； &lt;a href=&#34;https://www.jianshu.com/p/68a05b5af088&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;文章1&lt;/a&gt;、&lt;a href=&#34;https://blog.csdn.net/qq_26222859/article/details/80817673&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;文章2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;后续可以学习的文章&lt;a href=&#34;http://jm.taobao.org/2018/06/13/%E5%81%9A%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%EF%BC%9F/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;阿里巴巴为什么不用 ZooKeeper 做服务发现？&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
