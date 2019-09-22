@@ -22,10 +22,10 @@
   <title>
        
        
-            | 飞雷神
+            | ftex&#39;s blog
        
   </title>
-  <meta name="title" content=" | 飞雷神">
+  <meta name="title" content=" | ftex&#39;s blog">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -57,8 +57,8 @@
     "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
     "dateModified" : "0001-01-01 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/ftex.github.io\/java_review\/",
-    "wordCount" : "953",
-    "keywords" : [  "飞雷神"]
+    "wordCount" : "958",
+    "keywords" : [  "ftex\x27s blog"]
 }
 </script>
 
@@ -72,7 +72,7 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ftex.github.io/">飞雷神</a>
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ftex.github.io/">ftex&#39;s blog</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -91,7 +91,7 @@
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ftex.github.io/">飞雷神</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://ftex.github.io/">ftex&#39;s blog</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -318,13 +318,18 @@ static final int hash(Object key) {
 <li>因为链表的时间复杂度是O(n)，红黑树的时间复杂度是O(logn)，红黑树的空间复杂度是链表的2倍，选择数据结构时，需要权衡时间空间复杂度。官方文档中给出一个概率：hashmap中一个链表的长度为8的概率是0.00000006，几乎不可能出现的事件，而且长度为8的链表的时间复杂度要比红黑树高，小于8时两者的时间复杂度基本相同，所以长度为8时变更链表为红黑树。从红黑树变更成链表的长度是6而不是7的原因是因为避免链表红黑树频繁切换。详见<a href="https://www.javazhiyin.com/34651.html" rel="nofollow noreferrer" target="_blank">链接</a> ,<a href="https://albenw.github.io/posts/df45eaf1/" rel="nofollow noreferrer" target="_blank">链接2</a></li>
 </ul></li>
 <li>在高并发场景中为什么会出现死循环
-<br/>在数组长度不够的情况下，需要申请一个更大内存的数组，分配元素的时候如果存在链表，hashmap中的链表是将元素放置在首节点的，那么重新分配的时候会将链表倒序排列，在并发场景的时候很容易让链表出现环的现象，这样会造成死循环。<a href="https://juejin.im/post/5a224e1551882535c56cb940" rel="nofollow noreferrer" target="_blank">链接</a> 、<a href="https://juejin.im/post/5a66a08d5188253dc3321da0" rel="nofollow noreferrer" target="_blank">链接</a></li>
+<br/>在数组长度不够的情况下，需要申请一个更大内存的数组，分配元素的时候如果存在链表，hashmap中的链表是将元素放置在首节点的，那么重新分配的时候会将链表倒序排列，在并发场景的时候很容易让链表出现环的现象，这样会造成死循环。(关键点：table中的链表元素是线程共享的，会出现entry2.next = entry2的情况)<a href="https://juejin.im/post/5a224e1551882535c56cb940" rel="nofollow noreferrer" target="_blank">链接</a> 、<a href="https://juejin.im/post/5a66a08d5188253dc3321da0" rel="nofollow noreferrer" target="_blank">链接</a>、<a href="https://www.jianshu.com/p/c15f7c180375" rel="nofollow noreferrer" target="_blank">漫画</a></li>
 <li>JDK1.8对HashMap做了哪些性能优化
 
 <ul>
 <li>从数组+链表改成了数组+链表和红黑树；</li>
 <li>优化了高位运算的hash算法：h^(h&gt;&gt;&gt;16);</li>
 <li>扩容后，元素要么是在原位置，要么是在原位置再移动2次幂的位置，且链表使用尾插法，避免出现死循环；</li>
+</ul></li>
+<li>为什么HashMap底层数组的长度总是2的n次方？
+
+<ul>
+<li>这是HashMap在速度上的优化。当length总是2的n次方时，h&amp; (length-1)运算等价于对length取模，也就是h%length，但是&amp;比%具有更高的效率。</li>
 </ul></li>
 <li>和ConcurrentHashMap的区别</li>
 <li>HashMap与HashTable的区别？

@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>飞雷神 on 飞雷神</title>
+    <title>ftex&#39;s blog on ftex&#39;s blog</title>
     <link>https://ftex.github.io/</link>
-    <description>Recent content in 飞雷神 on 飞雷神</description>
+    <description>Recent content in ftex&#39;s blog on ftex&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Apr 2019 16:39:18 +0800</lastBuildDate>
@@ -327,13 +327,18 @@ static final int hash(Object key) {
 &lt;li&gt;因为链表的时间复杂度是O(n)，红黑树的时间复杂度是O(logn)，红黑树的空间复杂度是链表的2倍，选择数据结构时，需要权衡时间空间复杂度。官方文档中给出一个概率：hashmap中一个链表的长度为8的概率是0.00000006，几乎不可能出现的事件，而且长度为8的链表的时间复杂度要比红黑树高，小于8时两者的时间复杂度基本相同，所以长度为8时变更链表为红黑树。从红黑树变更成链表的长度是6而不是7的原因是因为避免链表红黑树频繁切换。详见&lt;a href=&#34;https://www.javazhiyin.com/34651.html&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt; ,&lt;a href=&#34;https://albenw.github.io/posts/df45eaf1/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;在高并发场景中为什么会出现死循环
-&lt;br/&gt;在数组长度不够的情况下，需要申请一个更大内存的数组，分配元素的时候如果存在链表，hashmap中的链表是将元素放置在首节点的，那么重新分配的时候会将链表倒序排列，在并发场景的时候很容易让链表出现环的现象，这样会造成死循环。&lt;a href=&#34;https://juejin.im/post/5a224e1551882535c56cb940&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt; 、&lt;a href=&#34;https://juejin.im/post/5a66a08d5188253dc3321da0&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt;&lt;/li&gt;
+&lt;br/&gt;在数组长度不够的情况下，需要申请一个更大内存的数组，分配元素的时候如果存在链表，hashmap中的链表是将元素放置在首节点的，那么重新分配的时候会将链表倒序排列，在并发场景的时候很容易让链表出现环的现象，这样会造成死循环。(关键点：table中的链表元素是线程共享的，会出现entry2.next = entry2的情况)&lt;a href=&#34;https://juejin.im/post/5a224e1551882535c56cb940&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt; 、&lt;a href=&#34;https://juejin.im/post/5a66a08d5188253dc3321da0&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt;、&lt;a href=&#34;https://www.jianshu.com/p/c15f7c180375&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;漫画&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;JDK1.8对HashMap做了哪些性能优化
 
 &lt;ul&gt;
 &lt;li&gt;从数组+链表改成了数组+链表和红黑树；&lt;/li&gt;
 &lt;li&gt;优化了高位运算的hash算法：h^(h&amp;gt;&amp;gt;&amp;gt;16);&lt;/li&gt;
 &lt;li&gt;扩容后，元素要么是在原位置，要么是在原位置再移动2次幂的位置，且链表使用尾插法，避免出现死循环；&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;为什么HashMap底层数组的长度总是2的n次方？
+
+&lt;ul&gt;
+&lt;li&gt;这是HashMap在速度上的优化。当length总是2的n次方时，h&amp;amp; (length-1)运算等价于对length取模，也就是h%length，但是&amp;amp;比%具有更高的效率。&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;和ConcurrentHashMap的区别&lt;/li&gt;
 &lt;li&gt;HashMap与HashTable的区别？
